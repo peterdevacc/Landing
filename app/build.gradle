@@ -13,7 +13,7 @@ android {
         applicationId "com.peter.landing"
         minSdk 24
         targetSdk 32
-        versionCode 14
+        versionCode 15
         versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
