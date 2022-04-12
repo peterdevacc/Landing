@@ -4,7 +4,7 @@
 
 *一款安卓平台的英语单词学习软件*
 
-无需网络运行，完全免费，没有广告。适合初中到大学英语（四六级）单词学习，托福雅思考试的单词部分学习。
+无需网络运行，完全免费，没有广告。适合初中到大学英语（四六级）或者托福雅思考试的单词部分学习。
 
 [Google Play](https://play.google.com/store/apps/details?id=com.peter.landing&hl=en_US&gl=US)
 
