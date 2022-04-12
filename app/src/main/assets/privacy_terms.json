@@ -14,11 +14,15 @@
       "type": "text"
     },
     {
-      "text": "上岸单词软件不收集任何个人数据。\nLanding APP doesn't collect any personal data.",
+      "text": "上岸单词是一款离线软件，不含任何广告而且不收集任何个人数据。\nLanding APP is a offline software, doesn't have any Ads and doesn't collect any personal data.",
       "type": "text"
     },
     {
-      "text": "日期：2020年 12月 3号\nDate: Dec 3 2020",
+      "text": "使用上岸单词无需任何敏感的权限（摄像头，麦克风，照片库等）。\nUsing Landing APP doesn't require any sensitive permissions (camera, microphone, photo gallery, etc.).",
+      "type": "text"
+    },
+    {
+      "text": "日期：2022年 4月 12号\nDate: April 12 2022",
       "type": "signature"
     }
   ]
