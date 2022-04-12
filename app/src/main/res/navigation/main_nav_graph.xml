@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main">
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.peter.landing.ui.home.HomeFragment"
+        android:label="@string/app_cn_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_fragment_to_word_list_fragment"
+            app:destination="@id/word_list_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_fragment_to_learn_fragment"
+            app:destination="@id/learn_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_fragment_to_choice_fragment"
+            app:destination="@id/choice_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_fragment_to_spelling_fragment"
+            app:destination="@id/spelling_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_fragment_to_state_fragment"
+            app:destination="@id/state_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_fragment_to_revise_fragment"
+            app:destination="@id/revise_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_fragment_to_search_fragment"
+            app:destination="@id/search_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_home_fragment_to_typing_fragment"
+            app:destination="@id/typing_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/about_fragment"
+        android:name="com.peter.landing.ui.about.AboutFragment"
+        android:label="@string/page_about"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_about_fragment_to_terms_fragment"
+            app:destination="@id/terms_fragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.peter.landing.ui.dict.SearchFragment"
+        android:label="@string/page_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_fragment_to_definition_fragment"
+            app:destination="@id/definition_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_search_fragment_to_search_history_fragment"
+            app:destination="@id/search_history_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/plan_fragment"
+        android:name="com.peter.landing.ui.plan.PlanFragment"
+        android:label="@string/page_plan"
+        tools:layout="@layout/fragment_plan">
+        <action
+            android:id="@+id/action_plan_fragment_to_wrong_list_fragment"
+            app:destination="@id/wrong_list_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/definition_fragment"
+        android:name="com.peter.landing.ui.dict.DefinitionFragment"
+        android:label="@string/page_definition"
+        tools:layout="@layout/fragment_definition">
+        <argument
+            android:name="wordSpelling"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/note_fragment"
+        android:name="com.peter.landing.ui.note.NoteFragment"
+        android:label="@string/page_note"
+        tools:layout="@layout/fragment_note">
+    </fragment>
+    <fragment
+        android:id="@+id/spelling_fragment"
+        android:name="com.peter.landing.ui.home.spelling.SpellingFragment"
+        android:label="@string/page_spelling"
+        tools:layout="@layout/fragment_spelling">
+        <action
+            android:id="@+id/action_spelling_fragment_to_state_fragment"
+            app:destination="@id/state_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/word_list_fragment"
+        android:name="com.peter.landing.ui.home.word.WordListFragment"
+        android:label="@string/page_word_list"
+        tools:layout="@layout/fragment_word_list">
+        <action
+            android:id="@+id/action_word_list_fragment_to_learn_fragment"
+            app:destination="@id/learn_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/choice_fragment"
+        android:name="com.peter.landing.ui.home.choice.ChoiceFragment"
+        android:label="@string/page_choice"
+        tools:layout="@layout/fragment_choice">
+        <action
+            android:id="@+id/action_choice_fragment_to_state_fragment"
+            app:destination="@id/state_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/learn_fragment"
+        android:name="com.peter.landing.ui.home.learn.LearnFragment"
+        android:label="@string/page_learn"
+        tools:layout="@layout/fragment_learn">
+        <action
+            android:id="@+id/action_learn_fragment_to_state_fragment"
+            app:destination="@id/state_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/help_fragment"
+        android:name="com.peter.landing.ui.help.HelpFragment"
+        android:label="@string/page_help"
+        tools:layout="@layout/fragment_help">
+    </fragment>
+    <fragment
+        android:id="@+id/state_fragment"
+        android:name="com.peter.landing.ui.home.state.StateFragment"
+        android:label="@string/page_state"
+        tools:layout="@layout/fragment_state">
+        <argument
+            android:name="studySection"
+            app:argType="com.peter.landing.domain.study.StudySection" />
+        <action
+            android:id="@+id/action_state_fragment_to_choice_fragment"
+            app:destination="@id/choice_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_state_fragment_to_spelling_fragment"
+            app:destination="@id/spelling_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_state_fragment_to_typing_fragment"
+            app:destination="@id/typing_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/revise_fragment"
+        android:name="com.peter.landing.ui.home.revise.ReviseFragment"
+        android:label="@string/page_revise"
+        tools:layout="@layout/fragment_revise">
+        <action
+            android:id="@+id/action_revise_fragment_to_exercise_fragment"
+            app:destination="@id/exercise_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/exercise_fragment"
+        android:name="com.peter.landing.ui.home.revise.ExerciseFragment"
+        android:label="@string/page_exercise"
+        tools:layout="@layout/fragment_exercise">
+        <action
+            android:id="@+id/action_exercise_fragment_to_state_fragment"
+            app:destination="@id/state_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/ipa_fragment"
+        android:name="com.peter.landing.ui.ipa.IpaFragment"
+        android:label="@string/page_ipa"
+        tools:layout="@layout/fragment_ipa" />
+    <fragment
+        android:id="@+id/terms_fragment"
+        android:name="com.peter.landing.ui.terms.TermsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_terms">
+        <argument
+            android:name="termsType"
+            app:argType="com.peter.landing.ui.terms.adapter.TermsType" />
+    </fragment>
+    <fragment
+        android:id="@+id/agreement_fragment"
+        android:name="com.peter.landing.ui.agreement.AgreementFragment"
+        android:label=""
+        tools:layout="@layout/fragment_agreement"/>
+    <fragment
+        android:id="@+id/search_history_fragment"
+        android:name="com.peter.landing.ui.dict.SearchHistoryFragment"
+        android:label="@string/page_search_history"
+        tools:layout="@layout/fragment_search_history" >
+        <action
+            android:id="@+id/action_search_history_fragment_to_definition_fragment"
+            app:destination="@id/definition_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/wrong_list_fragment"
+        android:name="com.peter.landing.ui.wrong.WrongListFragment"
+        android:label="@string/page_wrong_list"
+        tools:layout="@layout/fragment_wrong_list" />
+    <fragment
+        android:id="@+id/typing_fragment"
+        android:name="com.peter.landing.ui.home.typing.TypingFragment"
+        android:label="@string/page_typing"
+        tools:layout="@layout/fragment_typing">
+        <action
+            android:id="@+id/action_typing_fragment_to_state_fragment"
+            app:destination="@id/state_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/affix_fragment"
+        android:name="com.peter.landing.ui.affix.AffixFragment"
+        android:label="@string/page_affix"
+        tools:layout="@layout/fragment_affix" />
+</navigation>

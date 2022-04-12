@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--DARK COLOR THEME-->
+    <color name="color_primary">#486581</color>
+    <color name="color_primary_variant">#91acc9</color>
+    <color name="color_primary_dark">#35516a</color>
+    <color name="color_secondary">#486581</color>
+    <color name="color_secondary_variant">#768da5</color>
+    <color name="color_gray">#263238</color>
+    <color name="red50">#d33</color>
+    <color name="color_yes">#608c64</color>
+    <color name="color_no">#9b374d</color>
+
+    <color name="color_background">#121111</color>
+    <color name="color_surface">#202124</color>
+    <color name="color_error">#CF6679</color>
+
+    <color name="color_on_primary">#ffffff</color>
+    <color name="color_on_primary_fade">#878787</color>
+    <color name="color_on_secondary">#ffffff</color>
+    <color name="color_on_secondary_fade">#878787</color>
+    <color name="color_on_background">#ffffff</color>
+    <color name="color_on_surface">#ffffff</color>
+    <color name="color_on_error">#c2cbce</color>
+
+    <color name="color_correct">#4b830d</color>
+    <color name="color_wrong">#c63f17</color>
+
+    <color name="color_main_card_border">#486581</color>
+    <color name="color_choice_border">#778589</color>
+    <color name="color_suggestion_card_border">#3C5E40</color>
+    <color name="color_wrong_list_button">#486581</color>
+    <color name="color_ipa_divider">#486581</color>
+    <color name="color_divider">#565656</color>
+    <color name="color_new_plan_title">#D3AF41</color>
+    <color name="color_header">#4C8C4F</color>
+    <color name="color_affix_form">#AE7626</color>
+
+</resources>

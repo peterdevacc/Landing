@@ -1,0 +1,222 @@
+<resources>
+    <string name="app_en_name">Landing</string>
+    <string name="app_cn_name" translatable="false">上岸单词</string>
+    <string name="app_version" translatable="false">1.0.2</string>
+    <string name="app_last_update" translatable="false">2022年 3月 4号</string>
+
+    <string name="nav_header_title" translatable="false">Landing</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+
+    <string name="action_theme" translatable="false">主题设置</string>
+    <string name="action_empty_search_history" translatable="false">清除查询历史</string>
+    <string name="action_ipa_filter" translatable="false">音标筛选</string>
+    <string name="action_affix_tips" translatable="false">词缀提示</string>
+    <string name="action_affix_filter" translatable="false">词缀筛选</string>
+
+    <string name="page_home" translatable="false">首页</string>
+    <string name="page_plan" translatable="false">学习计划</string>
+    <string name="page_wrong_list" translatable="false">错词列表</string>
+    <string name="page_ipa" translatable="false">音标列表</string>
+    <string name="page_search" translatable="false">单词查询</string>
+    <string name="page_search_history" translatable="false">查询历史</string>
+    <string name="page_note" translatable="false">生词列表</string>
+    <string name="page_affix" translatable="false">词缀表格</string>
+    <string name="page_help" translatable="false">帮助</string>
+    <string name="page_about" translatable="false">关于</string>
+    <string name="page_word_list" translatable="false">单词列表</string>
+    <string name="page_learn" translatable="false">单词学习</string>
+    <string name="page_choice" translatable="false">单选练习</string>
+    <string name="page_typing" translatable="false">拼写学习</string>
+    <string name="page_spelling" translatable="false">默写练习</string>
+    <string name="page_state" translatable="false">完成状态</string>
+    <string name="page_definition" translatable="false">单词释义</string>
+    <string name="page_revise" translatable="false">单词复习</string>
+    <string name="page_exercise" translatable="false">单词练习</string>
+
+    <!--    Home-->
+    <string name="home_pick_theme" translatable="false">选择主题</string>
+    <string name="home_plan_finished_tips" translatable="false">学习计划完成</string>
+
+    <!--    Plan-->
+    <string name="plan_start_date_title" translatable="false">开始日期：</string>
+    <string name="plan_vocabulary_title" translatable="false">英语词库：</string>
+    <string name="plan_words_num_title" translatable="false">每日词量：</string>
+    <string name="plan_end_date_title" translatable="false">预计结束：</string>
+    <string name="plan_delete" translatable="false">删除计划</string>
+    <string name="plan_delete_msg" translatable="false">确定要删除当前的学习计划吗？</string>
+    <string name="plan_empty_msg" translatable="false">目前还没有\n点击 \'+\' 按钮即可制定</string>
+
+    <!--    New Plan-->
+    <string name="new_plan_title" translatable="false">制定计划</string>
+    <string name="new_plan_date_toast" translatable="false">提示：请选择开始日期</string>
+    <string name="new_plan_vocabulary_toast" translatable="false">提示：请选择单词列表</string>
+    <string name="new_plan_words_num_toast" translatable="false">提示：请选择每日词量</string>
+    <string name="new_plan_today_radio_btn" translatable="false">今天</string>
+    <string name="new_plan_tomorrow_radio_btn" translatable="false">明天</string>
+
+    <!--    Vocabulary Pick-->
+    <string name="vocabulary_name" translatable="false">名字：%1$s</string>
+    <string name="vocabulary_size" translatable="false">词量：%1$d</string>
+    <string name="vocabulary_description" translatable="false">描述：%1$s</string>
+
+    <!--    Progress-->
+    <string name="today_progress" translatable="false">今天学习进度</string>
+    <string name="total_progress" translatable="false">整体学习进度</string>
+    <string name="en_explain" translatable="false">英</string>
+    <string name="cn_explain" translatable="false">中</string>
+    <string name="plan_progress_wrong_list" translatable="false">查看错词列表</string>
+
+    <!--    About-->
+    <string name="about_app_name" translatable="false">上岸单词 Landing</string>
+    <string name="about_version_title" translatable="false">软件版本</string>
+    <string name="about_date_title" translatable="false">更新日期</string>
+    <string name="about_terms" translatable="false">条款</string>
+    <string name="about_service_terms" translatable="false">服务协议</string>
+    <string name="about_service_text" translatable="false">
+        查看上岸单词软件的服务协议
+    </string>
+    <string name="about_privacy_policy_terms" translatable="false">隐私政策</string>
+    <string name="about_privacy_policy_text" translatable="false">
+        查看上岸单词软件的隐私政策
+    </string>
+    <string name="about_acknowledge_terms" translatable="false">软件声明</string>
+    <string name="about_acknowledge_text" translatable="false">
+        查看上岸单词软件的软件声明
+    </string>
+    <string name="about_contact" translatable="false">https://github.com/peterdevacc/Landing</string>
+    <string name="about_advisement" translatable="false">教育应该跟健康的空气一样，自由、免费、必要</string>
+
+    <!--    Agreement-->
+    <string name="agreement_agree" translatable="false">接受且开始使用</string>
+    <string name="agreement_disagree" translatable="false">不接受，退出</string>
+    <string name="agreement_title" translatable="false">欢迎使用\n上岸单词</string>
+    <string name="agreement_sub_title" translatable="false">表达准确，沟通流畅，相互理解</string>
+
+    <!--    State-->
+    <string name="start_choice" translatable="false">"进行单选练习"</string>
+    <string name="start_typing" translatable="false">"进行拼写学习"</string>
+    <string name="start_spell" translatable="false">"进行默写练习"</string>
+    <string name="complete_learn" translatable="false">"单词学习完成"</string>
+    <string name="complete_choice" translatable="false">"单选练习完成"</string>
+    <string name="complete_typing" translatable="false">"拼写学习完成"</string>
+    <string name="complete_spell" translatable="false">"默写练习完成"</string>
+    <string name="complete_revise" translatable="false">"复习练习完成"</string>
+    <string name="back_to_home_page" translatable="false">"回到首页"</string>
+    <string name="state_wrong_word_tips" translatable="false">点击表项为记入生词本，加号为添加所有</string>
+
+    <!--    Dict-->
+    <string name="search_input_hint" translatable="false">请输入要查询的单词</string>
+    <string name="search_not_exist_hint" translatable="false">单词 %1$s 不在词库范围内</string>
+    <string name="empty_search_history_msg" translatable="false">确定要删除所有的单词查询历史吗？</string>
+    <string name="search_history_empty_msg" translatable="false">查询过的单词\n会出现在这里</string>
+
+    <!--    Definition-->
+    <string name="mark_btn" translatable="false">标记为生词</string>
+    <string name="language_cn" translatable="false">中文：</string>
+    <string name="language_en" translatable="false">英文：</string>
+
+    <!--    Note-->
+    <string name="note_empty_msg" translatable="false">标记为生词的单词\n会出现在这里</string>
+    <string name="note_delete_toast" translatable="false"><b>%1$s</b> 已从生词列表中删除</string>
+    <string name="note_undo_delete" translatable="false">撤销删除</string>
+
+    <!--    Choice-->
+    <string name="choice_tips" translatable="false">点击选项的标题来选择正确的单词中文解释</string>
+    <string name="choice_correct" translatable="false">选择正确！</string>
+    <string name="choice_wrong" translatable="false">选择错误，绿色为正确答案</string>
+    <string name="choice_chosen" translatable="false">选择的</string>
+
+    <!--    Typing-->
+    <string name="typing_input_hint" translatable="false">请输入单词的拼写</string>
+    <string name="typing_tips" translatable="false">请学习单词的拼写，然后输入单词的拼写</string>
+    <string name="typing_en_explain" translatable="false">英文解释</string>
+    <string name="typing_cn_explain" translatable="false">中文解释</string>
+
+    <!--    Spelling-->
+    <string name="spell_answer" translatable="false">答案：</string>
+    <string name="spell_input_hint" translatable="false">请输入单词的拼写</string>
+    <string name="spell_correct" translatable="false">拼写正确!</string>
+    <string name="spell_wrong" translatable="false">拼写错误，正确答案如上</string>
+    <string name="spell_tips" translatable="false">请根据单词的中文解释写出单词的拼写</string>
+
+    <!--    Exercise-->
+    <string name="rearrange_spelling_tips" translatable="false">请点击字母来输入单词的正确拼写</string>
+    <string name="rearrange_spelling_correct" translatable="false">排列正确！</string>
+    <string name="rearrange_spelling_wrong" translatable="false">拼写错误，绿色为正确答案</string>
+
+    <string name="img_content_description" translatable="false">图片</string>
+    <string name="ic_content_description" translatable="false">图标</string>
+
+    <string name="start_learning" translatable="false">进行单词学习</string>
+    <string name="start_exercise" translatable="false">进行练习</string>
+
+    <!--    IPA-->
+    <string name="ipa_consonants" translatable="false">辅音</string>
+    <string name="ipa_vowels" translatable="false">元音</string>
+    <string name="ipa_tips" translatable="false">灰色为单词举例</string>
+
+    <!--    Wrong-->
+    <string name="wrong_word_tips" translatable="false">点击单词即可标记为生词</string>
+    <string name="wrong_list_show_today" translatable="false">查看今天</string>
+    <string name="wrong_list_show_all" translatable="false">查看全部</string>
+    <string name="wrong_list_empty_msg" translatable="false">练习中答错的单词\n会出现在这里</string>
+
+    <!--    Affix-->
+    <string name="affix_tips_heading" translatable="false">词根，前缀，后缀</string>
+    <string name="affix_tips" translatable="false">
+        在英语中，词根为单词的基本形式
+        \n前缀(prefix)加在词根的首部(like -> dislike)
+        \n后缀(suffix)则加在其尾部(active -> activate)
+        \n前缀一般情况下不会改变词根的类别, 但后缀会
+    </string>
+    <string name="affix_text" translatable="false">词缀</string>
+    <string name="affix_meaning" translatable="false">含义</string>
+    <string name="affix_example" translatable="false">例子</string>
+    <string name="affix_prefix" translatable="false">前缀</string>
+    <string name="affix_suffix" translatable="false">后缀</string>
+    <string name="affix_mixed" translatable="false">混合</string>
+
+    <string name="previous_one" translatable="false">上一个</string>
+    <string name="next_one" translatable="false">下一个</string>
+    <string name="confirm" translatable="false">确定</string>
+    <string name="complete" translatable="false">完成</string>
+    <string name="submit" translatable="false">提交</string>
+    <string name="reset" translatable="false">重置</string>
+    <string name="not_chosen" translatable="false">未选择</string>
+    <string name="cancel" translatable="false">取消</string>
+    <string name="total_num" translatable="false">总数：<b>%1$d</b>个</string>
+    <string name="num_divider" translatable="false">/</string>
+    <string name="right_arrow" translatable="false">>></string>
+    <string name="get_total" translatable="false">查看全部</string>
+
+    <!--    keyboard-->
+    <string name="letter_a" translatable="false">a</string>
+    <string name="letter_b" translatable="false">b</string>
+    <string name="letter_c" translatable="false">c</string>
+    <string name="letter_d" translatable="false">d</string>
+    <string name="letter_e" translatable="false">e</string>
+    <string name="letter_f" translatable="false">f</string>
+    <string name="letter_g" translatable="false">g</string>
+    <string name="letter_h" translatable="false">h</string>
+    <string name="letter_i" translatable="false">i</string>
+    <string name="letter_j" translatable="false">j</string>
+    <string name="letter_k" translatable="false">k</string>
+    <string name="letter_l" translatable="false">l</string>
+    <string name="letter_m" translatable="false">m</string>
+    <string name="letter_n" translatable="false">n</string>
+    <string name="letter_o" translatable="false">o</string>
+    <string name="letter_p" translatable="false">p</string>
+    <string name="letter_q" translatable="false">q</string>
+    <string name="letter_r" translatable="false">r</string>
+    <string name="letter_s" translatable="false">s</string>
+    <string name="letter_t" translatable="false">t</string>
+    <string name="letter_u" translatable="false">u</string>
+    <string name="letter_v" translatable="false">v</string>
+    <string name="letter_w" translatable="false">w</string>
+    <string name="letter_x" translatable="false">x</string>
+    <string name="letter_y" translatable="false">y</string>
+    <string name="letter_z" translatable="false">z</string>
+    <string name="symbol_hyphen" translatable="false">-</string>
+    <string name="symbol_apostrophe" translatable="false">\'</string>
+
+</resources>

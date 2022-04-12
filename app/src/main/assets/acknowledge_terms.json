@@ -1,0 +1,153 @@
+{
+  "type": "acknowledge",
+  "data": [
+    {
+      "text": "Jetbrains Kotlin Stdlib / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://github.com/JetBrains/kotlin",
+      "type": "text"
+    },
+    {
+      "text": "Jetbrains Kotlin Coroutines / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://github.com/Kotlin/kotlinx.coroutines",
+      "type": "text"
+    },
+    {
+      "text": "Google Material Components for Android / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://github.com/material-components/material-components-android",
+      "type": "text"
+    },
+    {
+      "text": "Google Material Design Icons / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://github.com/google/material-design-icons",
+      "type": "text"
+    },
+    {
+      "text": "Android Room / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/android-room-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Lifecycle / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-lifecycle-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Fragment / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-fragment-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Core / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-core-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Appcompat / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-appcompat-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Constraintlayout / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/opt/sherpa/+/studio-3.0/constraintlayout",
+      "type": "text"
+    },
+    {
+      "text": "Android Navigation / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-navigation-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Recyclerview / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-recyclerview-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Viewpager2 / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-viewpager2-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Preference / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-preference-release",
+      "type": "text"
+    },
+    {
+      "text": "Android Paging 3 / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-paging-release",
+      "type": "text"
+    },
+    {
+      "text": "Google Dagger Hilt / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-hilt-release",
+      "type": "text"
+    },
+    {
+      "text": "PhilJay MPAndroidChart / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://github.com/PhilJay/MPAndroidChart",
+      "type": "text"
+    },
+    {
+      "text": "Google Gson / Apache-2.0 License",
+      "type": "subTitle"
+    },
+    {
+      "text": "https://github.com/google/gson",
+      "type": "text"
+    },
+    {
+      "text": "上岸单词 For Android, written in kotlin\nCopyright © 洪振健 2020，保留所有权利",
+      "type": "signature"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="word_list_num_entries">
+        <item>10个</item>
+        <item>20个</item>
+        <item>30个</item>
+    </string-array>
+
+    <integer-array name="word_list_num_entry_values">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+    </integer-array>
+
+    <string-array name="plan_tab_list">
+        <item>进展</item>
+        <item>内容</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>浅色</item>
+        <item>深色</item>
+        <item>按省电模式设定</item>
+    </string-array>
+
+    <string-array name="theme_entry_values">
+        <item>LIGHT</item>
+        <item>DARK</item>
+        <item>DEFAULT</item>
+    </string-array>
+
+</resources>

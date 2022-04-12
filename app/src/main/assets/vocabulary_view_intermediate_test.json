@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "spelling": "aversion",
+    "ipa": "/əˈvɜr·ʒən/",
+    "cn": "{\"名词\": [\"厌恶，反感；讨厌的人（或事物）\"]}",
+    "en": "{\"noun\": [\"(a person or thing that causes) a feeling of strong dislike or of not wishing to do something.\"]}",
+    "pronName": "pron/a/aversion.ogg"
+  },
+  {
+    "id": 2,
+    "spelling": "interrupt",
+    "ipa": "/ˌɪntəˈrʌpt/",
+    "cn": "{\"动词\": [\"打断（其他人说话）\", \"短暂中止\"]}",
+    "en": "{\"verb\": [\"to stop a person from speaking for a short period by something you say or do.\", \"to stop something from happening for a short period.\"]}",
+    "pronName": "pron/i/interrupt.ogg"
+  },
+  {
+    "id": 3,
+    "spelling": "trash",
+    "ipa": "/træʃ/",
+    "cn": "{\"名词\": [\"废物，垃圾\"], \"动词\": [\"丢弃\", \"严重破坏；拆毁\", \"猛烈批评，痛斥\"]}",
+    "en": "{\"noun\": [\"anything that is worthless and of low quality; waste.\"], \"verb\": [\"to throw something away.\", \"to cause a lot of damage to something.\", \"to criticize something or someone severely.\"]}",
+    "pronName": "pron/t/trash.ogg"
+  },
+  {
+    "id": 4,
+    "spelling": "photocopier",
+    "ipa": "/ˈfoʊ.t̬oʊˌkɑː.pi.ɚ/",
+    "cn": "{\"名词\": [\"摄影复制机，复印机\"]}",
+    "en": "{\"noun\": [\"a machine that makes copies of documents using a photographic process.\"]}",
+    "pronName": "pron/p/photocopier.ogg"
+  },
+  {
+    "id": 5,
+    "spelling": "rain",
+    "ipa": "/reɪn/",
+    "cn": "{\"名词\": [\"雨；雨水\"], \"动词\": [\"下雨\"]}",
+    "en": "{\"noun\": [\"moisture condensed from the atmosphere that falls visibly in separate drops.\"], \"verb\": [\"rain falls.\"]}",
+    "pronName": "pron/r/rain.ogg"
+  },
+  {
+    "id": 6,
+    "spelling": "cigar",
+    "ipa": "/sɪˈɡɑr/",
+    "cn": "{\"名词\": [\"雪茄烟\"]}",
+    "en": "{\"noun\": [\"a cylinder of tobacco rolled in tobacco leaves for smoking.\"]}",
+    "pronName": "pron/c/cigar.ogg"
+  },
+  {
+    "id": 7,
+    "spelling": "spin",
+    "ipa": "/spɪn/",
+    "cn": "{\"动词\": [\"（使）旋转\", \"纺线，纺纱，纺织\"], \"名词\": [\"旋转，旋动\", \"兜风\"]}",
+    "en": "{\"verb\": [\"turn or cause to turn or whirl around quickly.\", \"draw out (wool, cotton, or other material) and convert it into threads, either by hand or with machinery.\"], \"noun\": [\"A rapid turning or whirling motion.\", \"a brief trip in a vehicle for pleasure.\"]}",
+    "pronName": "pron/s/spin.ogg"
+  },
+  {
+    "id": 8,
+    "spelling": "muddle",
+    "ipa": "/ˈmʌd.əl/",
+    "cn": "{\"名词\": [\"混乱状态；糟糕局面\"]}",
+    "en": "{\"noun\": [\"an untidy or confused state.\"]}",
+    "pronName": "pron/m/muddle.ogg"
+  },
+  {
+    "id": 9,
+    "spelling": "slack",
+    "ipa": "/slæk/",
+    "cn": "{\"形容词\": [\"不紧的，松的\", \"萧条的，不景气的；冷清的；懈怠的\"], \"名词\": [\"松弛，不紧\", \"淡季，萧条期\", \"煤屑\", \"宽松长裤，便裤\"], \"动词\": [\"使松弛，使宽松\", \"松懈，懈怠.\"]}",
+    "en": "{\"adjective\": [\"not tight; loose.\", \"showing a lack of activity; not busy or happening in a positive way.\"], \"noun\": [\"the state of being too loose or not tight enough.\", \"a period when something is slower or less active than usual.\", \"Coal dust or small pieces of coal.\", \"casual trousers.\"], \"verb\": [\"Loosen (something, especially a rope)\", \"to shirk or evade work or duty.\"]}",
+    "pronName": "pron/s/slack.ogg"
+  },
+  {
+    "id": 10,
+    "spelling": "antithesis",
+    "ipa": "/ænˈtɪθ.ə.sɪs/",
+    "cn": "{\"名词\": [\"正相反\", \"对立；对照\"]}",
+    "en": "{\"noun\": [\"the exact opposite.\", \"a contrast between two things.\"]}",
+    "pronName": "pron/a/antithesis.ogg"
+  },
+  {
+    "id": 11,
+    "spelling": "digitally",
+    "ipa": "/ˈdɪdʒ.ə.t̬əl.i/",
+    "cn": "{\"副词\": [\"数字化地，信息化地\"]}",
+    "en": "{\"adverb\": [\"by means of digital or computer technology.\"]}",
+    "pronName": "pron/d/digitally.ogg"
+  },
+  {
+    "id": 12,
+    "spelling": "grand",
+    "ipa": "/ɡrænd/",
+    "cn": "{\"形容词\": [\"宏伟的，壮丽的；显赫的\", \"重大的；主要的；首要的\"], \"名词\": [\"一千块（美元或英镑）\"]}",
+    "en": "{\"adjective\": [\"magnificent and imposing in appearance, size, or style.\", \"denoting the largest or most important item of its kind.\"], \"noun\": [\"a thousand dollars or pounds.\"]}",
+    "pronName": "pron/g/grand.ogg"
+  },
+  {
+    "id": 13,
+    "spelling": "guidance",
+    "ipa": "/ˈɡaɪd(ə)ns/",
+    "cn": "{\"名词\": [\"指导，引导\"]}",
+    "en": "{\"noun\": [\"help and advice about how to do something or about how to deal with problems.\"]}",
+    "pronName": "pron/g/guidance.ogg"
+  },
+  {
+    "id": 14,
+    "spelling": "chimpanzee",
+    "ipa": "/ˌtʃɪm.pænˈziː/",
+    "cn": "{\"名词\": [\"黑猩猩\"]}",
+    "en": "{\"noun\": [\"a small, very intelligent African ape with black or brown fur.\"]}",
+    "pronName": "pron/c/chimpanzee.ogg"
+  },
+  {
+    "id": 15,
+    "spelling": "astounded",
+    "ipa": "/əˈstaʊn.dɪd/",
+    "cn": "{\"形容词\": [\"感到震惊的；觉得惊骇的\"]}",
+    "en": "{\"adjective\": [\"very surprised or shocked.\"]}",
+    "pronName": "pron/a/astounded.ogg"
+  },
+  {
+    "id": 16,
+    "spelling": "dramatically",
+    "ipa": "/drəˈmæt̬.ɪ.kəl.i/",
+    "cn": "{\"副词\": [\"剧烈地；明显地\", \"戏剧性地；夸张地\"]}",
+    "en": "{\"adverb\": [\"in a very sudden or noticeable way.\", \"(as if) acting in a play.\"]}",
+    "pronName": "pron/d/dramatically.ogg"
+  },
+  {
+    "id": 17,
+    "spelling": "roughly",
+    "ipa": "/ˈrʌf.li/",
+    "cn": "{\"副词\": [\"粗暴地\", \"粗糙地；不精细地；简单地\", \"大致地，近似地，粗略地\"]}",
+    "en": "{\"adverb\": [\"in a manner lacking gentleness; harshly or violently.\", \"in a manner lacking refinement and precision.\", \"approximately.\"]}",
+    "pronName": "pron/r/roughly.ogg"
+  },
+  {
+    "id": 18,
+    "spelling": "lumber",
+    "ipa": "/ˈlʌmbər/",
+    "cn": "{\"动词\": [\"缓慢且笨拙地移动\", \"砍下木材以供运输和销售\", \"负担不必要的责任或任务等情况\"], \"名词\": [\"木材或原木\", \"被存放的闲置物品（例如家具）\"]}",
+    "en": "{\"verb\": [\"move in a slow, heavy, awkward way.\", \"cut and prepare forest timber for transport and sale.\", \"burden (someone) with an unwanted responsibility, task, or set of circumstances.\"], \"noun\": [\"timber or logs especially when dressed for use.\", \"articles of furniture or other household items that are no longer useful and inconveniently take up storage space.\"]}",
+    "pronName": "pron/l/lumber.ogg"
+  },
+  {
+    "id": 19,
+    "spelling": "sing",
+    "ipa": "/sɪŋ/",
+    "cn": "{\"动词\": [\"唱歌；演唱\", \"呜呜作响，发嗡嗡声\"], \"名词\": [\"合唱\"]}",
+    "en": "{\"verb\": [\"make musical sounds with the voice, especially words with a set tune.\", \"to make or be filled with a (high) ringing sound.\"], \"noun\": [\"a session of group singing.\"]}",
+    "pronName": "pron/s/sing.ogg"
+  },
+  {
+    "id": 20,
+    "spelling": "boat",
+    "ipa": "/boʊt/",
+    "cn": "{\"名词\": [\"艇；小船\", \"轮船\"], \"动词\": [\"乘船出游\"]}",
+    "en": "{\"noun\": [\"a small vehicle for travelling on water.\", \"a ship.\"], \"verb\": [\"to travel by boat.\"]}",
+    "pronName": "pron/b/boat.ogg"
+  }
+]

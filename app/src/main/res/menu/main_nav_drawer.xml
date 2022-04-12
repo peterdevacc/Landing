@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group_main"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_fragment"
+            android:icon="@drawable/ic_home_24dp"
+            android:title="@string/page_home" />
+        <item
+            android:id="@+id/plan_fragment"
+            android:icon="@drawable/ic_plan_24dp"
+            android:title="@string/page_plan" />
+        <item
+            android:id="@+id/ipa_fragment"
+            android:icon="@drawable/ic_ipa_24dp"
+            android:title="@string/page_ipa" />
+        <item
+            android:id="@+id/search_fragment"
+            android:icon="@drawable/ic_search_24dp"
+            android:title="@string/page_search" />
+        <item
+            android:id="@+id/note_fragment"
+            android:icon="@drawable/ic_note_24dp"
+            android:title="@string/page_note" />
+        <item
+            android:id="@+id/affix_fragment"
+            android:icon="@drawable/ic_affix_24dp"
+            android:title="@string/page_affix" />
+    </group>
+
+    <group
+        android:id="@+id/group_info"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/help_fragment"
+            android:icon="@drawable/ic_help_24dp"
+            android:title="@string/page_help" />
+        <item
+            android:id="@+id/about_fragment"
+            android:icon="@drawable/ic_about_24dp"
+            android:title="@string/page_about" />
+    </group>
+
+</menu>

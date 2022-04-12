@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="theme_entries">
+        <item>浅色</item>
+        <item>深色</item>
+        <item>按系统设定</item>
+    </string-array>
+
+    <string-array name="theme_entry_values">
+        <item>LIGHT</item>
+        <item>DARK</item>
+        <item>DEFAULT</item>
+    </string-array>
+
+</resources>

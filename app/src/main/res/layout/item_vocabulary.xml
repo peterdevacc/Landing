@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_vocabulary_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="?alphaEmphasisHigh"
+            android:breakStrategy="high_quality"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:hyphenationFrequency="full"
+            android:textAppearance="@style/TextAppearance.LandingTheme.Body1"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_a"
+            app:layout_constraintEnd_toStartOf="@+id/gl_vertical_a"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_vocabulary_size"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="6dp"
+            android:alpha="?alphaEmphasisHigh"
+            android:breakStrategy="high_quality"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:hyphenationFrequency="full"
+            android:textAppearance="@style/TextAppearance.LandingTheme.Body1"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_a"
+            app:layout_constraintEnd_toStartOf="@+id/gl_vertical_b"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical_a"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/item_vocabulary_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical_b"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_vocabulary_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="6dp"
+            android:alpha="?alphaEmphasisHigh"
+            android:breakStrategy="high_quality"
+            android:ellipsize="end"
+            android:gravity="start|top"
+            android:hyphenationFrequency="full"
+            android:textAppearance="@style/TextAppearance.LandingTheme.Body1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/item_vocabulary_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_horizontal_a" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.28" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.76" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

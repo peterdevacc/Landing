@@ -1,0 +1,170 @@
+[
+  {
+    "text": "p",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "pig",
+    "exampleWordIpa": "/pɪɡ/",
+    "exampleWordPronName": "pron/p/pig.ogg"
+  },
+  {
+    "text": "b",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "bear",
+    "exampleWordIpa": "/ber/",
+    "exampleWordPronName": "pron/b/bear.ogg"
+  },
+  {
+    "text": "s",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "snake",
+    "exampleWordIpa": "/sneɪk/",
+    "exampleWordPronName": "pron/s/snake.ogg"
+  },
+  {
+    "text": "z",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "zebra",
+    "exampleWordIpa": "/ˈzibrə/",
+    "exampleWordPronName": "pron/z/zebra.ogg"
+  },
+  {
+    "text": "t",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "turtle",
+    "exampleWordIpa": "/ˈtɝː.t̬əl/",
+    "exampleWordPronName": "pron/t/turtle.ogg"
+  },
+  {
+    "text": "d",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "dog",
+    "exampleWordIpa": "/dɔɡ/",
+    "exampleWordPronName": "pron/d/dog.ogg"
+  },
+  {
+    "text": "f",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "frog",
+    "exampleWordIpa": "/frɔɡ/",
+    "exampleWordPronName": "pron/f/frog.ogg"
+  },
+  {
+    "text": "v",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "ever",
+    "exampleWordIpa": "/ˈev·ər/",
+    "exampleWordPronName": "pron/e/ever.ogg"
+  },
+  {
+    "text": "k",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "cat",
+    "exampleWordIpa": "/kæt/",
+    "exampleWordPronName": "pron/c/cat.ogg"
+  },
+  {
+    "text": "g",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "goat",
+    "exampleWordIpa": "/ɡoʊt/",
+    "exampleWordPronName": "pron/g/goat.ogg"
+  },
+  {
+    "text": "θ",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "nothing",
+    "exampleWordIpa": "/ˈnʌθɪŋ/",
+    "exampleWordPronName": "pron/n/nothing.ogg"
+  },
+  {
+    "text": "ð",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "feather",
+    "exampleWordIpa": "/ˈfeðər/",
+    "exampleWordPronName": "pron/f/feather.ogg"
+  },
+  {
+    "text": "ʒ",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "television",
+    "exampleWordIpa": "/ˈtel.ə.vɪʒ.ən/",
+    "exampleWordPronName": "pron/t/television.ogg"
+  },
+  {
+    "text": "dʒ",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "giraffe",
+    "exampleWordIpa": "/dʒɪˈræf/",
+    "exampleWordPronName": "pron/g/giraffe.ogg"
+  },
+  {
+    "text": "m",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "mouse",
+    "exampleWordIpa": "/maʊs/",
+    "exampleWordPronName": "pron/m/mouse.ogg"
+  },
+  {
+    "text": "n",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "another",
+    "exampleWordIpa": "/əˈnʌðər/",
+    "exampleWordPronName": "pron/a/another.ogg"
+  },
+  {
+    "text": "ŋ",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "think",
+    "exampleWordIpa": "/θɪŋk/",
+    "exampleWordPronName": "pron/t/think.ogg"
+  },
+  {
+    "text": "ʃ",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "sheep",
+    "exampleWordIpa": "/ʃip/",
+    "exampleWordPronName": "pron/s/sheep.ogg"
+  },
+  {
+    "text": "tʃ",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "chicken",
+    "exampleWordIpa": "/ˈtʃɪkən/",
+    "exampleWordPronName": "pron/c/chicken.ogg"
+  },
+  {
+    "text": "r",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "rabbit",
+    "exampleWordIpa": "/ˈræbɪt/",
+    "exampleWordPronName": "pron/r/rabbit.ogg"
+  },
+  {
+    "text": "l",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "lion",
+    "exampleWordIpa": "/ˈlaɪən/",
+    "exampleWordPronName": "pron/l/lion.ogg"
+  },
+  {
+    "text": "w",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "wolf",
+    "exampleWordIpa": "/wʊlf/",
+    "exampleWordPronName": "pron/w/wolf.ogg"
+  },
+  {
+    "text": "j",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "yet",
+    "exampleWordIpa": "/jet/",
+    "exampleWordPronName": "pron/y/yet.ogg"
+  },
+  {
+    "text": "h",
+    "type": "CONSONANTS",
+    "exampleWordSpelling": "horse",
+    "exampleWordIpa": "/hɔrs/",
+    "exampleWordPronName": "pron/h/horse.ogg"
+  }
+]

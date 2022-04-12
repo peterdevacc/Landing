@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "type": "PREFIX",
+    "description": "前缀 + 动词 -> 动词"
+  },
+  {
+    "id": 2,
+    "type": "SUFFIX",
+    "description": "动词 + 后缀 -> 让单词带有“cause to be(使成为)”含义"
+  },
+  {
+    "id": 3,
+    "type": "PREFIX",
+    "description": "前缀 + 名词 -> 名词"
+  },
+  {
+    "id": 4,
+    "type": "PREFIX",
+    "description": "否定/阴性/负/不 + 形容词 -> 形容词"
+  },
+  {
+    "id": 5,
+    "type": "SUFFIX",
+    "description": "动词/名词/形容词 + 后缀 -> 名词"
+  },
+  {
+    "id": 6,
+    "type": "SUFFIX",
+    "description": "动词/名词 + 后缀 -> 形容词"
+  },
+  {
+    "id": 7,
+    "type": "MIXED",
+    "description": "前缀 + 词根 + 后缀 -> 形容词"
+  },
+  {
+    "id": 8,
+    "type": "MIXED",
+    "description": "前缀 + 词根 + 后缀 -> 名词"
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": 5,
+    "spelling": "rain",
+    "ipa": "/reɪn/",
+    "cn": "{\"名词\": [\"雨；雨水\"], \"动词\": [\"下雨\"]}",
+    "en": "{\"noun\": [\"moisture condensed from the atmosphere that falls visibly in separate drops.\"], \"verb\": [\"rain falls.\"]}",
+    "pronName": "pron/r/rain.ogg"
+  },
+  {
+    "id": 7,
+    "spelling": "spin",
+    "ipa": "/spɪn/",
+    "cn": "{\"动词\": [\"（使）旋转\", \"纺线，纺纱，纺织\"], \"名词\": [\"旋转，旋动\", \"兜风\"]}",
+    "en": "{\"verb\": [\"turn or cause to turn or whirl around quickly.\", \"draw out (wool, cotton, or other material) and convert it into threads, either by hand or with machinery.\"], \"noun\": [\"A rapid turning or whirling motion.\", \"a brief trip in a vehicle for pleasure.\"]}",
+    "pronName": "pron/s/spin.ogg"
+  },
+  {
+    "id": 12,
+    "spelling": "grand",
+    "ipa": "/ɡrænd/",
+    "cn": "{\"形容词\": [\"宏伟的，壮丽的；显赫的\", \"重大的；主要的；首要的\"], \"名词\": [\"一千块（美元或英镑）\"]}",
+    "en": "{\"adjective\": [\"magnificent and imposing in appearance, size, or style.\", \"denoting the largest or most important item of its kind.\"], \"noun\": [\"a thousand dollars or pounds.\"]}",
+    "pronName": "pron/g/grand.ogg"
+  },
+  {
+    "id": 16,
+    "spelling": "dramatically",
+    "ipa": "/drəˈmæt̬.ɪ.kəl.i/",
+    "cn": "{\"副词\": [\"剧烈地；明显地\", \"戏剧性地；夸张地\"]}",
+    "en": "{\"adverb\": [\"in a very sudden or noticeable way.\", \"(as if) acting in a play.\"]}",
+    "pronName": "pron/d/dramatically.ogg"
+  },
+  {
+    "id": 17,
+    "spelling": "roughly",
+    "ipa": "/ˈrʌf.li/",
+    "cn": "{\"副词\": [\"粗暴地\", \"粗糙地；不精细地；简单地\", \"大致地，近似地，粗略地\"]}",
+    "en": "{\"adverb\": [\"in a manner lacking gentleness; harshly or violently.\", \"in a manner lacking refinement and precision.\", \"approximately.\"]}",
+    "pronName": "pron/r/roughly.ogg"
+  },
+  {
+    "id": 19,
+    "spelling": "sing",
+    "ipa": "/sɪŋ/",
+    "cn": "{\"动词\": [\"唱歌；演唱\", \"呜呜作响，发嗡嗡声\"], \"名词\": [\"合唱\"]}",
+    "en": "{\"verb\": [\"make musical sounds with the voice, especially words with a set tune.\", \"to make or be filled with a (high) ringing sound.\"], \"noun\": [\"a session of group singing.\"]}",
+    "pronName": "pron/s/sing.ogg"
+  },
+  {
+    "id": 20,
+    "spelling": "boat",
+    "ipa": "/boʊt/",
+    "cn": "{\"名词\": [\"艇；小船\", \"轮船\"], \"动词\": [\"乘船出游\"]}",
+    "en": "{\"noun\": [\"a small vehicle for travelling on water.\", \"a ship.\"], \"verb\": [\"to travel by boat.\"]}",
+    "pronName": "pron/b/boat.ogg"
+  },
+  {
+    "id": 21,
+    "spelling": "boost",
+    "ipa": "/bust/",
+    "cn": "{\"动词\": [\"改善；提高；增强；推动\", \"把...向上推\"], \"名词\": [\"改善；提高；增强；推动\", \"举，推，提，抬\"]}",
+    "en": "{\"verb\": [\"help or encourage (something) to increase or improve.\", \"to lift someone or something by pushing from below.\"], \"noun\": [\"an improvement or increase, or an action that causes this.\", \"a push from below that lifts a person or thing.\"]}",
+    "pronName": "pron/b/boost.ogg"
+  },
+  {
+    "id": 23,
+    "spelling": "gentleman",
+    "ipa": "/ˈdʒent(ə)lmən/",
+    "cn": "{\"名词\": [\"先生（对男士的礼貌称呼）\", \"（尤指对女性）彬彬有礼的男士，有教养的男人；君子\", \"上流社会的人，有身份的人；绅士\"]}",
+    "en": "{\"noun\": [\"a polite way of talking to or referring to a man.\", \"a man who is polite and behaves well towards other people, especially women.\", \"a man of a high social class.\"]}",
+    "pronName": "pron/g/gentleman.ogg"
+  },
+  {
+    "id": 27,
+    "spelling": "high",
+    "ipa": "/haɪ/",
+    "cn": "{\"形容词\": [\"高的\", \"高于的，多的\", \"重要的，高级的\", \"高音的，声音尖锐的\", \"兴奋的；欣喜若狂的\"], \"名词\": [\"高点；高级；高个子\", \"极度兴奋；欣喜若狂\"], \"副词\": [\"在高处，高高地\"]}",
+    "en": "{\"adjective\": [\"of great vertical extent.\", \"great, or greater than normal, in quantity, size, or intensity.\", \"great in rank or status.\", \"(of a sound or note) having a frequency at the upper end of the auditory range.\", \"excited; euphoric.\"], \"noun\": [\"a high point, level, or figure.\", \"a state of high spirits or euphoria.\"], \"adverb\": [\"at or to a large distance from the ground.\"]}",
+    "pronName": "pron/h/high.ogg"
+  },
+  {
+    "id": 28,
+    "spelling": "after",
+    "ipa": "/ˈæftər/",
+    "cn": "{\"介词\": [\"（时间、地点或顺序）在...之后；（一个）接着（一个）\", \"具有...风格；模仿...\", \"依照...命名\"], \"副词\": [\"以后，后来；向后；在后面\"], \"连词\": [\"在...之后\"], \"前缀\": [\"...之后的\"]}",
+    "en": "{\"preposition\": [\"following in time, place, or order.\", \"typical of or similar to the style of.\", \"used when giving someone or something the same name as another person or thing.\"], \"adverb\": [\"later than someone or something else.\"], \"conjunction\": [\"at a time that is later than another event.\"], \"prefix\": [\"coming after.\"]}",
+    "pronName": "pron/a/after.ogg"
+  },
+  {
+    "id": 29,
+    "spelling": "furniture",
+    "ipa": "/ˈfɜrnɪtʃər/",
+    "cn": "{\"名词\": [\"家具\"]}",
+    "en": "{\"noun\": [\"large movable equipment, such as tables and chairs, used to make a house, office, or other space suitable for living or working.\"]}",
+    "pronName": "pron/f/furniture.ogg"
+  },
+  {
+    "id": 31,
+    "spelling": "obligation",
+    "ipa": "/ˌɑblɪˈɡeɪʃ(ə)n/",
+    "cn": "{\"名词\": [\"义务，职责，责任\"]}",
+    "en": "{\"noun\": [\"an act or course of action to which a person is morally or legally bound; a duty or commitment.\"]}",
+    "pronName": "pron/o/obligation.ogg"
+  },
+  {
+    "id": 38,
+    "spelling": "brown",
+    "ipa": "/braʊn/",
+    "cn": "{\"形容词\": [\"棕色的，褐色的\"], \"名词\": [\"棕色，褐色（或者颜料）\"], \"动词\": [\"使变成褐色（尤其是炒菜）\"]}",
+    "en": "{\"adjective\": [\"of a color produced by mixing red, yellow, and black, as of dark wood or rich soil.\"], \"noun\": [\"brown color or pigment.\"], \"verb\": [\"make or become brown, typically by cooking.\"]}",
+    "pronName": "pron/b/brown.ogg"
+  },
+  {
+    "id": 39,
+    "spelling": "strength",
+    "ipa": "/streŋθ/",
+    "cn": "{\"名词\": [\"体力；力气；力量；实力\", \"强度；力度\", \"优点，长处，强项\", \"人数；人力\"]}",
+    "en": "{\"noun\": [\"the ability to do things that need a lot of physical or mental effort.\", \"the degree to which something is strong or powerful.\", \"a good or beneficial quality or attribute of a person or thing.\", \"the number of people comprising a group, typically a team or army.\"]}",
+    "pronName": "pron/s/strength.ogg"
+  },
+  {
+    "id": 40,
+    "spelling": "spring",
+    "ipa": "/sprɪŋ/",
+    "cn": "{\"动词\": [\"跳，跃，蹦\", \"突然出现；涌现\"], \"名词\": [\"春天，春季\", \"弹簧，发条\", \"跳，跃，蹦\", \"泉\"]}",
+    "en": "{\"verb\": [\"move or jump suddenly or rapidly upward or forward.\", \"to appear suddenly.\"], \"noun\": [\"the season after winter and before summer, in which vegetation begins to appear, in the northern hemisphere from March to May and in the southern hemisphere from September to November.\", \"a resilient device, typically a helical metal coil, that can be pressed or pulled but returns to its former shape when released, used chiefly to exert constant tension or absorb movement.\", \"a sudden jump upward or forward.\", \"a place where water or oil wells up from an underground source, or the basin or flow formed in such a way.\"]}",
+    "pronName": "pron/s/spring.ogg"
+  },
+  {
+    "id": 41,
+    "spelling": "circle",
+    "ipa": "/ˈsɜrk(ə)l/",
+    "cn": "{\"名词\": [\"圆；圆圈；圆形\", \"圈子；集团；界；阶层\"], \"动词\": [\"盘旋；环行；绕...转圈\", \"圈出；在...上画圈\"]}",
+    "en": "{\"noun\": [\"a round plane figure whose boundary (the circumference) consists of points equidistant from a fixed point (the center).\", \"a group of people with family, work, or social connections.\"], \"verb\": [\"move all the way around (someone or something), especially more than once.\", \"to draw a circle around something.\"]}",
+    "pronName": "pron/c/circle.ogg"
+  },
+  {
+    "id": 45,
+    "spelling": "limit",
+    "ipa": "/ˈlɪmɪt/",
+    "cn": "{\"名词\": [\"限额；限制；上限\"], \"动词\": [\"限制，限定\"]}",
+    "en": "{\"noun\": [\"the greatest amount, number, or level of something that is either possible or allowed.\"], \"verb\": [\"to control something so that it is not greater than a particular amount, number, or level.\"]}",
+    "pronName": "pron/l/limit.ogg"
+  },
+  {
+    "id": 49,
+    "spelling": "minor",
+    "ipa": "/ˈmaɪnər/",
+    "cn": "{\"形容词\": [\"较不重要的；次要的；轻微的\", \"小调的；小音阶的\"], \"名词\": [\"未成年人\", \"副修科目\"], \"动词\": [\"修副科\"]}",
+    "en": "{\"adjective\": [\"having little importance, influence, or effect, especially when compared with other things of the same type.\", \"belonging or relating to a musical scale that is generally thought to have a sad sound.\"], \"noun\": [\"someone who is too young to have the legal responsibilities of an adult.\", \"a college student's subsidiary subject or area of concentration.\"], \"verb\": [\"study or qualify in as a subsidiary subject at college or university.\"]}",
+    "pronName": "pron/m/minor.ogg"
+  },
+  {
+    "id": 51,
+    "spelling": "wrap",
+    "ipa": "/ræp/",
+    "cn": "{\"动词\": [\"（用纸、布或其他材料）包，裹\", \"用...包裹；用...覆盖\"], \"名词\": [\"包裹物；覆盖物\", \"卷饼\", \"宽松外套；浴衣\", \"（女式）披肩，围巾\"]}",
+    "en": "{\"verb\": [\"to cover or surround something with paper, cloth, or other material.\", \"to cover someone with a piece of material in order to protect them.\"], \"noun\": [\"material that is used to cover or protect objects.\", \"a sandwich made with one piece of very thin bread that is folded around a filling.\", \"a loose piece of clothing that is worn tied around the body.\", \"a long piece of cloth that a woman wears around her shoulders to keep her warm or for decoration.\"]}",
+    "pronName": "pron/w/wrap.ogg"
+  }
+]

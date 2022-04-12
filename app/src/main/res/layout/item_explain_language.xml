@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textview.MaterialTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/explain_item_language"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:textAppearance="@style/TextAppearance.LandingTheme.Body2"
+    android:textColor="@color/color_secondary"
+    android:textStyle="bold" />

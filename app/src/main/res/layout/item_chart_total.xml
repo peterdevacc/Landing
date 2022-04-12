@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.LandingTheme.MainCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:alpha="?alphaEmphasisHigh"
+            android:gravity="center"
+            android:text="@string/total_progress"
+            android:textAlignment="gravity"
+            android:textAppearance="@style/TextAppearance.LandingTheme.Headline6"
+            android:textColor="@color/color_on_surface"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/item_chart_total_pie_chart"
+            android:layout_width="match_parent"
+            android:layout_height="230dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_chart_total_remember_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="?alphaEmphasisHigh"
+                android:gravity="center|center_vertical"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.LandingTheme.Body1"
+                android:textColor="@color/color_on_surface" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_chart_total_revise_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="?alphaEmphasisHigh"
+                android:gravity="center|center_vertical"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.LandingTheme.Body1"
+                android:textColor="@color/color_on_surface" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_chart_total_not_learn_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="?alphaEmphasisHigh"
+                android:gravity="center|center_vertical"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.LandingTheme.Body1"
+                android:textColor="@color/color_on_surface" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
