@@ -1,8 +1,8 @@
 <resources>
     <string name="app_en_name">Landing</string>
     <string name="app_cn_name" translatable="false">上岸单词</string>
-    <string name="app_version" translatable="false">1.0.2</string>
-    <string name="app_last_update" translatable="false">2022年 3月 4号</string>
+    <string name="app_version" translatable="false">1.0.3</string>
+    <string name="app_last_update" translatable="false">2022年 5月 27号</string>
 
     <string name="nav_header_title" translatable="false">Landing</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
