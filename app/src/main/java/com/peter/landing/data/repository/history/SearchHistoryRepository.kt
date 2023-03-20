@@ -5,15 +5,12 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.peter.landing.data.local.history.SearchHistory
 import com.peter.landing.data.local.history.SearchHistoryDAO
-import com.peter.landing.util.LandingCoroutineScope
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class SearchHistoryRepository @Inject constructor(
-    private val scope: LandingCoroutineScope,
     private val searchHistoryDAO: SearchHistoryDAO
 ) {
 
@@ -30,12 +27,10 @@ class SearchHistoryRepository @Inject constructor(
     suspend fun getTotalSearchHistoryNum() =
         searchHistoryDAO.countSearchHistory()
 
-    suspend fun insertSearchHistory(searchHistory: SearchHistory) = scope.launch {
+    suspend fun insertSearchHistory(searchHistory: SearchHistory) =
         searchHistoryDAO.insertSearchHistory(searchHistory)
-    }.join()
 
-    suspend fun removeSearchHistory() = scope.launch {
+    suspend fun removeSearchHistory() =
         searchHistoryDAO.deleteSearchHistoryList()
-    }.join()
 
 }

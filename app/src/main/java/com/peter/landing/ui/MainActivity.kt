@@ -1,125 +1,118 @@
 package com.peter.landing.ui
 
-import android.os.Build
 import android.os.Bundle
-import android.view.WindowInsets
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.core.view.updatePadding
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavController
-import androidx.navigation.NavGraph
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.peter.landing.R
-import com.peter.landing.databinding.ActivityMainBinding
-import com.peter.landing.ui.util.ThemeMode
-import com.peter.landing.ui.util.setThemeMode
+import android.view.MotionEvent
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
+import androidx.navigation.compose.rememberNavController
+import com.peter.landing.data.util.ThemeMode
+import com.peter.landing.ui.navigation.LandingNavGraphMain
+import com.peter.landing.ui.theme.LandingAppTheme
+import com.peter.landing.ui.util.ErrorNotice
+import com.peter.landing.ui.util.Sound
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var navController: NavController
-    private val viewModel: MainViewModel by viewModels()
+    @Inject
+    lateinit var mainViewModel: MainViewModel
+
+    private lateinit var sound: Sound
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.LandingTheme_DayNight)
+        val splashScreen = installSplashScreen()
+
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        lifecycleScope.launch {
-            val theme = viewModel.getCurrentTheme()
-            val mode = ThemeMode.valueOf(theme)
-            setThemeMode(mode)
-            configureUI()
+        splashScreen.setKeepOnScreenCondition {
+            mainViewModel.uiState.value == MainUiState.Loading
         }
 
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-    override fun onBackPressed() {
-        if (binding.mainDrawerLayout.isOpen) {
-            binding.mainDrawerLayout.close()
-        } else {
-            super.onBackPressed()
-        }
-    }
-
-    fun openDrawer() {
-        binding.mainDrawerLayout.openDrawer(GravityCompat.START)
-    }
-
-    fun setToolbarTitle(title: String) {
-        binding.mainToolbar.title = title
-    }
-
-    private suspend fun configureUI() {
-
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment
-        navController = navHostFragment.navController
-        val graph = navController.navInflater.inflate(R.navigation.main_nav_graph)
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.home_fragment,
-                R.id.plan_fragment,
-                R.id.ipa_fragment, R.id.search_fragment, R.id.note_fragment,
-                R.id.affix_fragment,
-                R.id.about_fragment, R.id.help_fragment,
-                R.id.agreement_fragment
-            ), binding.mainDrawerLayout
+        WindowCompat.setDecorFitsSystemWindows(
+            window, false
         )
 
-        val currentAgreementValue = viewModel.getCurrentAgreementValue()
-        if (currentAgreementValue) {
-            graph.setStartDestination(R.id.home_fragment)
-        } else {
-            graph.setStartDestination(R.id.agreement_fragment)
-        }
-        setNavStartDestination(graph, navHostFragment)
+        sound = Sound(this)
 
-        binding.mainDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        setContent {
+            val navHostController = rememberNavController()
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            binding.mainNavView.setOnApplyWindowInsetsListener { v, insets ->
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    v.updatePadding(
-                        left = v.paddingLeft +
-                                insets.getInsets(WindowInsets.Type.systemBars()).left
-                    )
-                } else {
-                    v.rootWindowInsets.displayCutout?.let {
-                        v.updatePadding(
-                            left = v.paddingLeft + it.safeInsetLeft
+            when (val uiState = mainViewModel.uiState.value) {
+                is MainUiState.Success -> {
+                    val isDarkMode = when (uiState.themeMode) {
+                        ThemeMode.LIGHT -> false
+                        ThemeMode.DARK -> true
+                        ThemeMode.DEFAULT -> isSystemInDarkTheme()
+                    }
+                    LandingAppTheme(isDarkMode) {
+                        LandingNavGraphMain(
+                            isDarkMode = isDarkMode,
+                            playPron = sound::playAudio,
+                            navHostController = navHostController,
+                            exitApp = this@MainActivity::finish,
+                            startDestination = uiState.startDestination
                         )
                     }
                 }
-                insets
+                is MainUiState.Error -> {
+                    LandingAppTheme {
+                        Box(
+                            contentAlignment = Alignment.Center,
+                            modifier = Modifier
+                                .background(MaterialTheme.colorScheme.background)
+                                .windowInsetsPadding(insets = WindowInsets.systemBars)
+                                .fillMaxSize()
+                        ) {
+                            ErrorNotice(code = uiState.code)
+                        }
+                    }
+                }
+                is MainUiState.Loading -> {
+                    LandingAppTheme {
+                        Box(
+                            contentAlignment = Alignment.Center,
+                            modifier = Modifier
+                                .background(MaterialTheme.colorScheme.background)
+                                .windowInsetsPadding(insets = WindowInsets.systemBars)
+                                .fillMaxSize()
+                        ) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(24.dp, 24.dp)
+                            )
+                        }
+                    }
+                }
             }
         }
     }
 
-    private fun setNavStartDestination(graph: NavGraph, navHostFragment: NavHostFragment) {
-        navController.graph = graph
-        setSupportActionBar(binding.mainToolbar)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.mainNavView.setupWithNavController(navController)
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        return ev?.pointerCount == 1 && super.dispatchTouchEvent(ev)
+    }
 
-        supportFragmentManager.beginTransaction()
-            .setPrimaryNavigationFragment(navHostFragment).commit()
+    override fun onResume() {
+        super.onResume()
+        lifecycle.addObserver(sound)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        lifecycle.removeObserver(sound)
     }
 
 }
+
+
+

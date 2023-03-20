@@ -15,13 +15,17 @@ class VocabularyViewRepository @Inject constructor(
     private var beginCache = -1
     private var numCache = -1
 
-    suspend fun getWordList(start: Int, num: Int, name: Vocabulary.Name): List<Word> {
-        if (beginCache != start || numCache != num) {
+    suspend fun getWordList(
+        start: Int,
+        wordListSize: Int,
+        vocabularyName: Vocabulary.Name
+    ): List<Word> {
+        if (beginCache != start || numCache != wordListSize) {
             beginCache = start
-            numCache = num
-            wordListCache = when (name) {
-                Vocabulary.Name.BEGINNER -> getWordListBeginner(start, num)
-                Vocabulary.Name.INTERMEDIATE -> getWordListIntermediate(start, num)
+            numCache = wordListSize
+            wordListCache = when (vocabularyName) {
+                Vocabulary.Name.BEGINNER -> getWordListBeginner(start, wordListSize)
+                Vocabulary.Name.INTERMEDIATE -> getWordListIntermediate(start, wordListSize)
                 Vocabulary.Name.NONE -> emptyList()
             }
         }

@@ -57,38 +57,8 @@ object LandingDatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDailyProgressDAO(LandingDatabase: LandingDatabase): DailyProgressDAO {
-        return LandingDatabase.getDailyProgressDAO()
-    }
-
-    @Provides
-    @Singleton
-    fun provideLearnProgressDAO(LandingDatabase: LandingDatabase): LearnProgressDAO {
-        return LandingDatabase.getLearnProgressDAO()
-    }
-
-    @Provides
-    @Singleton
-    fun provideChoiceProgressDAO(LandingDatabase: LandingDatabase): ChoiceProgressDAO {
-        return LandingDatabase.getChoiceProgressDAO()
-    }
-
-    @Provides
-    @Singleton
-    fun provideTypingProgressDAO(LandingDatabase: LandingDatabase): TypingProgressDAO {
-        return LandingDatabase.getTypingProgressDAO()
-    }
-
-    @Provides
-    @Singleton
-    fun provideSpellingProgressDAO(LandingDatabase: LandingDatabase): SpellingProgressDAO {
-        return LandingDatabase.getSpellingProgressDAO()
-    }
-
-    @Provides
-    @Singleton
-    fun provideReviseProgressDAO(LandingDatabase: LandingDatabase): ReviseProgressDAO {
-        return LandingDatabase.getReviseProgressDAO()
+    fun provideStudyProgressDAO(LandingDatabase: LandingDatabase): StudyProgressDAO {
+        return LandingDatabase.getStudyProgressDAO()
     }
 
     @Provides

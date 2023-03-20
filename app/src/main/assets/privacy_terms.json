@@ -1,29 +1,29 @@
 {
-  "type": "privacy",
+  "type": "PRIVACY",
   "data": [
     {
-      "text": "上岸单词软件隐私\nLanding 上岸单词 privacy policy",
-      "type": "subTitle"
+      "type": "TITLE",
+      "text": "上岸单词软件隐私政策\nLanding Privacy Policy"
     },
     {
-      "text": "我们十分重视你的隐私。本隐私声明阐述了 上岸单词软件 处理的个人数据以及 上岸单词软件 处理个人数据的方式和目的。\nWe take your privacy very seriously. This privacy statement explains the personal data Landing 上岸单词 processes, how Landing 上岸单词 processes it, and for what purposes.",
-      "type": "text"
+      "type": "TEXT",
+      "text": "我们十分重视你的隐私。本隐私声明阐述了 上岸单词软件 处理的个人数据以及 上岸单词软件 处理个人数据的方式和目的。\nWe take your privacy very seriously. This privacy statement explains the personal data Landing processes, how Landing processes it, and for what purposes."
     },
     {
-      "text": "请阅读本隐私声明。 此声明适用于 上岸单词软件 与你之间的互动。\nPlease read this privacy statement. This statement applies to the interactions Landing 上岸单词 has with you.",
-      "type": "text"
+      "type": "TEXT",
+      "text": "请阅读本隐私声明。 此声明适用于 上岸单词软件 与你之间的互动。\nPlease read this privacy statement. This statement applies to the interactions Landing has with you."
     },
     {
-      "text": "上岸单词是一款离线软件，不含任何广告而且不收集任何用户数据。\nLanding 上岸单词 is a offline software, doesn't have any Ads and doesn't collect any user data.",
-      "type": "text"
+      "type": "TEXT",
+      "text": "上岸单词是一款离线软件，不含任何广告而且不收集任何用户数据。\nLanding is a offline software, doesn't have any Ads and doesn't collect any user data."
     },
     {
-      "text": "使用上岸单词无需任何敏感的权限（摄像头，麦克风，照片库，通讯录等）。\nUsing Landing 上岸单词 doesn't require any sensitive permissions (camera, microphone, photo gallery, address book, etc.).",
-      "type": "text"
+      "type": "TEXT",
+      "text": "使用上岸单词无需任何敏感的权限（摄像头，麦克风，照片库，通讯录等）。\nUsing Landing doesn't require any sensitive permissions (camera, microphone, photo gallery, address book, etc.)."
     },
     {
-      "text": "日期：2022年 4月 12号\nDate: April 12 2022",
-      "type": "signature"
+      "type": "SIGNATURE",
+      "text": "日期：2022年 1月 21号\nDate: Jan 21 2023"
     }
   ]
 }

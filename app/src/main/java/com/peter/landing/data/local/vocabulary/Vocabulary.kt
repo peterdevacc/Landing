@@ -10,11 +10,9 @@ data class Vocabulary(
 
     val size: Int,
 
-    val image: String,
-
     val description: String
 ) {
-    constructor() : this(Name.NONE, 0, "", "")
+    constructor() : this(Name.NONE, 0, "")
 
     enum class Name(val cnValue: String) {
         BEGINNER("基本运用"), INTERMEDIATE("生活常用"), NONE("")

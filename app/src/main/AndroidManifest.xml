@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.peter.landing">
-
-    <supports-screens
-        android:smallScreens="false"
-        android:normalScreens="true"
-        android:largeScreens="false"
-        android:xlargeScreens="false"/>
-
-    <compatible-screens>
-        <screen android:screenSize="normal" android:screenDensity="xhdpi" />
-        <screen android:screenSize="normal" android:screenDensity="420" />
-        <screen android:screenSize="normal" android:screenDensity="480" />
-        <screen android:screenSize="normal" android:screenDensity="560" />
-        <screen android:screenSize="normal" android:screenDensity="640" />
-    </compatible-screens>
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name=".LandingApp"
         android:icon="@mipmap/landing_launcher"
         android:label="@string/app_en_name"
         android:roundIcon="@mipmap/landing_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/LandingTheme.DayNight">
+        android:supportsRtl="true">
         <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/LandingTheme.DayNight.Splash"
+            android:theme="@style/Theme.Landing.SplashScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:resizeableActivity="false"

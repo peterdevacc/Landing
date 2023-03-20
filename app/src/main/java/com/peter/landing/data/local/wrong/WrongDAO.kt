@@ -2,8 +2,7 @@ package com.peter.landing.data.local.wrong
 
 import androidx.paging.PagingSource
 import androidx.room.*
-import com.peter.landing.data.util.MAX_REVISE_TIME
-import kotlinx.coroutines.flow.Flow
+import com.peter.landing.data.local.word.Word
 import java.util.*
 
 @Dao
@@ -12,64 +11,39 @@ interface WrongDAO {
     @Query("SELECT * FROM wrong WHERE word_id = :id")
     suspend fun getWrongById(id: Long): Wrong?
 
-    @Query("""
-        SELECT COALESCE(COUNT(*), 0) AS result FROM wrong 
-        WHERE revise_times < $MAX_REVISE_TIME
-    """)
-    suspend fun countWrongByReviseTimesLessThanThree(): Int
+    @Query(
+        """
+            SELECT id, spelling, ipa, cn, en, pron_name FROM wrong 
+            INNER JOIN word_list ON word_list.id = wrong.word_id
+            WHERE study_progress_id = :studyProgressId AND chosen_wrong IS 1
+        """
+    )
+    suspend fun getWrongByStudyProgressIdAndChosenWrong(studyProgressId: Long): List<Word>
 
     @Query(
         """
-            SELECT COALESCE(COUNT(*), 0) AS result FROM wrong 
-            WHERE revise_date = :date AND revise_times < $MAX_REVISE_TIME
+            SELECT id, spelling, ipa, cn, en, pron_name FROM wrong 
+            INNER JOIN word_list ON word_list.id = wrong.word_id
+            WHERE study_progress_id = :studyProgressId AND spelled_wrong IS 1
         """
     )
-    suspend fun countWrongByReviseDateAndReviseTimesLessThanThree(date: Calendar): Int
+    suspend fun getWrongByStudyProgressIdAndSpelledWrong(studyProgressId: Long): List<Word>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertWrong(wrong: Wrong)
-
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertWrongList(wrongList: List<Wrong>)
-
     @Update
     suspend fun updateWrong(wrong: Wrong)
-
-    @Update
-    suspend fun updateWrongList(wrongList: List<Wrong>)
 
     @Query("DELETE FROM wrong")
     suspend fun deleteWrong()
 
     @Query(
         """
-        SELECT * FROM wrong a INNER JOIN word_list b 
-        ON a.word_id = b.id ORDER BY a.add_date desc"""
-    )
-    fun getWrongWordPaging(): PagingSource<Int, WrongWord>
-
-    @Query(
+            SELECT study_progress_id, spelling, ipa, cn, en, pron_name FROM wrong a
+            INNER JOIN word_list ON word_list.id = a.word_id
+            ORDER BY study_progress_id DESC
         """
-        SELECT * FROM wrong a INNER JOIN word_list b 
-        ON a.word_id = b.id
-        WHERE a.add_date = :addDate AND a.chosen_wrong = 1"""
     )
-    fun getWrongWordListByAddDateAndChosenWrongFlow(addDate: Calendar): Flow<List<WrongWord>>
-
-    @Query(
-        """
-        SELECT * FROM wrong a INNER JOIN word_list b 
-        ON a.word_id = b.id
-        WHERE a.add_date = :addDate AND a.spelled_wrong = 1"""
-    )
-    fun getWrongWordListByAddDateAndSpelledWrongFlow(addDate: Calendar): Flow<List<WrongWord>>
-
-    @Query(
-        """
-        SELECT * FROM wrong a INNER JOIN word_list b 
-        ON a.word_id = b.id
-        WHERE a.revise_date = :date AND a.revise_times < 4"""
-    )
-    suspend fun getWrongWordListByReviseDateAndReviseTimeLessThanFour(date: Calendar): List<WrongWord>
+    fun getWrongWordPaging(): PagingSource<Int, ProgressWrongWord>
 
 }

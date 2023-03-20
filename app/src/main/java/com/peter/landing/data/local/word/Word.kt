@@ -11,17 +11,24 @@ import java.io.Serializable
     indices = [Index(value = ["spelling"], unique = true)]
 )
 data class Word(
+    @ColumnInfo(name = "spelling")
     val spelling: String,
 
+    @ColumnInfo(name = "ipa")
     val ipa: String,
 
-    val cn: String,
+    @ColumnInfo(name = "cn")
+    val cn: Map<String, List<String>>,
 
-    val en: String,
+    @ColumnInfo(name = "en")
+    val en: Map<String, List<String>>,
 
     @ColumnInfo(name = "pron_name")
     val pronName: String
 ) : Serializable {
+
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     var id: Long = 0
+
 }

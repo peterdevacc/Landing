@@ -12,9 +12,6 @@ class VocabularyRepository @Inject constructor(
 
     private var vocabularyListCache = emptyList<Vocabulary>()
 
-    suspend fun getVocabularyByName(name: Vocabulary.Name) =
-        vocabularyDAO.getVocabularyByVocabularyName(name)
-
     suspend fun getVocabularyList(): List<Vocabulary> {
         if (vocabularyListCache.isEmpty()) {
             vocabularyListCache = vocabularyDAO.getVocabularyList()

@@ -6,17 +6,12 @@ import androidx.paging.PagingData
 import com.peter.landing.data.local.note.Note
 import com.peter.landing.data.local.note.NoteDAO
 import com.peter.landing.data.local.word.Word
-import com.peter.landing.util.LandingCoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class NoteRepository @Inject constructor(
-    private val scope: LandingCoroutineScope,
     private val noteDAO: NoteDAO
 ) {
 
@@ -25,25 +20,11 @@ class NoteRepository @Inject constructor(
         return noteWord != null
     }
 
-    fun getTotalNoteNumFlow() =
-        noteDAO.getCountInNoteFlow()
-            .flowOn(Dispatchers.IO)
-
-    suspend fun addNote(note: Note) = scope.launch {
+    suspend fun addNote(note: Note) =
         noteDAO.insertNote(note)
-    }.join()
 
-    suspend fun addNoteList(notes: List<Note>) = scope.launch {
-        noteDAO.insertNoteList(notes)
-    }.join()
-
-    suspend fun removeNote(wordId: Long) = scope.launch {
+    suspend fun removeNote(wordId: Long) =
         noteDAO.deleteNoteByWordId(wordId)
-    }.join()
-
-    suspend fun removeNoteList(notes: List<Note>) = scope.launch {
-        noteDAO.deleteNoteList(notes)
-    }.join()
 
     fun getNotedWordFlow(): Flow<PagingData<Word>> {
         return Pager(

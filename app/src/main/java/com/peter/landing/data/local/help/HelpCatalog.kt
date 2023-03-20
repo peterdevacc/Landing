@@ -5,10 +5,10 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "help_catalog")
 data class HelpCatalog(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0,
+
     val name: String,
 
     val description: String
-) {
-    @PrimaryKey(autoGenerate = true)
-    var id: Long = 0
-}
+)

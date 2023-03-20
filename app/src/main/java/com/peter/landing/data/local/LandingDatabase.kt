@@ -32,10 +32,7 @@ import com.peter.landing.data.util.Converters
         HelpCatalog::class, Help::class,
         Word::class, Vocabulary::class,
         StudyPlan::class,
-        DailyProgress::class,
-        LearnProgress::class, ChoiceProgress::class,
-        TypingProgress::class, SpellingProgress::class,
-        ReviseProgress::class,
+        StudyProgress::class,
         VocabularyBeginner::class,
         VocabularyIntermediate::class,
         Note::class, Wrong::class,
@@ -60,12 +57,7 @@ abstract class LandingDatabase : RoomDatabase() {
     abstract fun getVocabularyDAO(): VocabularyDAO
     abstract fun getVocabularyViewDAO(): VocabularyViewDAO
     abstract fun getStudyPlanDAO(): StudyPlanDAO
-    abstract fun getDailyProgressDAO(): DailyProgressDAO
-    abstract fun getLearnProgressDAO(): LearnProgressDAO
-    abstract fun getChoiceProgressDAO(): ChoiceProgressDAO
-    abstract fun getTypingProgressDAO(): TypingProgressDAO
-    abstract fun getSpellingProgressDAO(): SpellingProgressDAO
-    abstract fun getReviseProgressDAO(): ReviseProgressDAO
+    abstract fun getStudyProgressDAO(): StudyProgressDAO
     abstract fun getNoteDAO(): NoteDAO
     abstract fun getWrongDAO(): WrongDAO
     abstract fun getSearchHistoryDAO(): SearchHistoryDAO

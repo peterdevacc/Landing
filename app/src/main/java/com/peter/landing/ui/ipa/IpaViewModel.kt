@@ -1,27 +1,50 @@
 package com.peter.landing.ui.ipa
 
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.peter.landing.data.local.ipa.Ipa
-import com.peter.landing.domain.ipa.IpaUseCase
+import com.peter.landing.data.repository.ipa.IpaRepository
+import com.peter.landing.data.util.DataResult
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class IpaViewModel @Inject constructor(
-    private val useCase: IpaUseCase
-) : ViewModel() {
+    private val ipaRepository: IpaRepository
+): ViewModel() {
 
-    val ipaAndExampleList = useCase
-        .ipaList
-        .asLiveData()
+    private val ipaUiState: MutableState<IpaUiState> = mutableStateOf(IpaUiState.Loading)
+    val uiState: State<IpaUiState> = ipaUiState
 
-    fun setIpaType(type: Ipa.Type) =
-        useCase.setIpaType(type, viewModelScope)
+    fun setIpaType(ipaType: Ipa.Type) {
+        viewModelScope.launch {
+            try {
+                val ipaList = ipaRepository.getIpaList().filter { it.type == ipaType }
+                ipaUiState.value = IpaUiState
+                    .Success(ipaType, ipaList)
+            } catch (exception: Exception) {
+                ipaUiState.value = IpaUiState
+                    .Error(DataResult.Error.Code.UNKNOWN)
+            }
+        }
+    }
 
     init {
-        useCase.initIpa(viewModelScope)
+        viewModelScope.launch {
+            try {
+                val ipaList = ipaRepository.getIpaList()
+                    .filter { it.type == Ipa.Type.CONSONANTS }
+                ipaUiState.value = IpaUiState
+                    .Success(Ipa.Type.CONSONANTS, ipaList)
+            } catch (exception: Exception) {
+                ipaUiState.value = IpaUiState
+                    .Error(DataResult.Error.Code.UNKNOWN)
+            }
+        }
     }
 
 }

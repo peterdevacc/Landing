@@ -7,12 +7,13 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
 class Sound (
-    private val context: Context
-): DefaultLifecycleObserver
-{
+    private val context: Context,
+): DefaultLifecycleObserver {
 
     private var mediaPlayer: MediaPlayer? = null
     private var soundFd: AssetFileDescriptor? = null
+
+    private var enabled = false
 
     fun playAudio(name: String) {
         mediaPlayer?.let { player ->
@@ -32,10 +33,12 @@ class Sound (
     override fun onResume(owner: LifecycleOwner) {
         super.onResume(owner)
         mediaPlayer = MediaPlayer()
+
     }
 
     override fun onPause(owner: LifecycleOwner) {
         super.onPause(owner)
+        enabled = false
         mediaPlayer?.release()
         soundFd?.close()
         mediaPlayer = null

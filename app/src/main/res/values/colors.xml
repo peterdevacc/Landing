@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--LIGHT COLOR THEME-->
 
-    <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
-    <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
-    <!--selection controls.-->
-    <color name="color_primary">#005442</color>
-    <color name="color_primary_variant">#3b816d</color>
-    <color name="color_primary_dark">#002a1b</color>
-    <color name="color_secondary">#0e4a87</color>
-    <color name="color_secondary_variant">#395e8e</color>
-    <color name="color_gray">#33000000</color>
-    <color name="red50">#d33</color>
-    <color name="color_yes">#51BC56</color>
-    <color name="color_no">#E4A6132E</color>
-
-    <!--colorBackground appears behind scrollable content and is used for the default window-->
-    <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
-    <!--and menus. colorError is used to indicate an error state for components such as-->
-    <!--text fields.-->
-    <color name="color_background">#f9ffee</color>
-    <color name="color_surface">#C3FFFFFF</color>
-    <color name="color_error">#b00020</color>
-
-    <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
-    <!--on which they appear.-->
-    <color name="color_on_primary">#ffffff</color>
-    <color name="color_on_primary_fade">#a3a3a3</color>
-    <color name="color_on_secondary">#ffffff</color>
-    <color name="color_on_secondary_fade">#a3a3a3</color>
-    <color name="color_on_background">#000000</color>
-    <color name="color_on_surface">#000000</color>
-    <color name="color_on_error">#3a3a3a</color>
-
-    <color name="color_correct">#4caf50</color>
-    <color name="color_wrong">#D33A14</color>
-
-    <color name="color_main_card_border">#002a1b</color>
-    <color name="color_choice_border">#000000</color>
-    <color name="color_suggestion_card_border">#E68800</color>
-    <color name="color_wrong_list_button">#104278</color>
-    <color name="color_ipa_divider">#3b816d</color>
-    <color name="color_divider">#d6d6d6</color>
-    <color name="color_new_plan_title">#E1AE13</color>
-    <color name="color_header">#40B345</color>
-    <color name="color_affix_form">#EC8F07</color>
+    <color name="color_splash">#0e4a87</color>
 
 </resources>
