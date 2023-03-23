@@ -12,8 +12,4 @@ sealed interface IpaUiState {
         val ipaList: List<Ipa>
     ) : IpaUiState
 
-    data class Error(
-        val code: DataResult.Error.Code
-    ) : IpaUiState
-
 }

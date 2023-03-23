@@ -46,24 +46,18 @@ class WordListViewModel @Inject constructor(
     init {
         viewModelScope.launch {
 
-            try {
-                val currentLesson = studyProgressRepository.getStudyProgressLatest()
-                if (currentLesson != null) {
-                    val wordList = vocabularyViewRepository.getWordList(
-                        start = currentLesson.start,
-                        wordListSize = currentLesson.wordListSize,
-                        vocabularyName = currentLesson.vocabularyName
+            val progress = studyProgressRepository.getStudyProgressLatest()
+            if (progress != null) {
+                val wordList = vocabularyViewRepository.getWordList(
+                    start = progress.start,
+                    wordListSize = progress.wordListSize,
+                    vocabularyName = progress.vocabularyName
+                )
+                wordListUiState.value = WordListUiState
+                    .Success(
+                        wordList = wordList
                     )
-                    wordListUiState.value = WordListUiState
-                        .Success(
-                            wordList = wordList
-                        )
-                } else {
-                    wordListUiState.value = WordListUiState
-                        .Error(DataResult.Error.Code.UNKNOWN)
-                }
-
-            } catch (exception: Exception) {
+            } else {
                 wordListUiState.value = WordListUiState
                     .Error(DataResult.Error.Code.UNKNOWN)
             }

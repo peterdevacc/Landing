@@ -45,81 +45,73 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            try {
-
-                val planFlow = studyPlanRepository.getStudyPlanFlow()
-                val progressFlow = studyProgressRepository.getStudyProgressLatestFlow()
-                planFlow.combine(progressFlow) { plan: StudyPlan?, progress: StudyProgress? ->
-                    plan to progress
-                }.collectLatest { (plan, latestProgress) ->
-                    if (plan != null) {
-                        if (plan.finished) {
-                            homeUiState.value = HomeUiState.Success(
-                                studyState = StudyState.PlanFinished
-                            )
-                        } else {
-                            if (latestProgress != null) {
-                                if (latestProgress.finishedDate == null) {
+            val planFlow = studyPlanRepository.getStudyPlanFlow()
+            val progressFlow = studyProgressRepository.getStudyProgressLatestFlow()
+            planFlow.combine(progressFlow) { plan: StudyPlan?, progress: StudyProgress? ->
+                plan to progress
+            }.collectLatest { (plan, latestProgress) ->
+                if (plan != null) {
+                    if (plan.finished) {
+                        homeUiState.value = HomeUiState.Success(
+                            studyState = StudyState.PlanFinished
+                        )
+                    } else {
+                        if (latestProgress != null) {
+                            if (latestProgress.finishedDate == null) {
+                                homeUiState.value = HomeUiState.Success(
+                                    studyState = StudyState.Learning(
+                                        latestProgress.progressState
+                                    )
+                                )
+                            } else {
+                                if (latestProgress.finishedDate == getTodayDateTime()) {
                                     homeUiState.value = HomeUiState.Success(
                                         studyState = StudyState.Learning(
                                             latestProgress.progressState
                                         )
                                     )
                                 } else {
-                                    if (latestProgress.finishedDate == getTodayDateTime()) {
-                                        homeUiState.value = HomeUiState.Success(
-                                            studyState = StudyState.Learning(
-                                                latestProgress.progressState
-                                            )
-                                        )
-                                    } else {
-                                        val currentProgress = StudyProgress(
-                                            id = latestProgress.id + 1L,
-                                            vocabularyName = plan.vocabularyName,
-                                            start = latestProgress.start + plan.wordListSize,
-                                            wordListSize = plan.wordListSize
-                                        )
-                                        studyProgressRepository.insertStudyProgress(
-                                            currentProgress
-                                        )
-
-                                        homeUiState.value = HomeUiState.Success(
-                                            studyState = StudyState.Learning(
-                                                currentProgress.progressState
-                                            )
-                                        )
-                                    }
-                                }
-                            } else {
-                                val firstProgress = StudyProgress(
-                                    id = 1,
-                                    vocabularyName = plan.vocabularyName,
-                                    start = 0,
-                                    wordListSize = plan.wordListSize
-                                )
-                                studyProgressRepository.insertStudyProgress(
-                                    firstProgress
-                                )
-
-                                homeUiState.value = HomeUiState.Success(
-                                    studyState = StudyState.Learning(
-                                        firstProgress.progressState
+                                    val currentProgress = StudyProgress(
+                                        id = latestProgress.id + 1L,
+                                        vocabularyName = plan.vocabularyName,
+                                        start = latestProgress.start + plan.wordListSize,
+                                        wordListSize = plan.wordListSize
                                     )
-                                )
+                                    studyProgressRepository.insertStudyProgress(
+                                        currentProgress
+                                    )
+
+                                    homeUiState.value = HomeUiState.Success(
+                                        studyState = StudyState.Learning(
+                                            currentProgress.progressState
+                                        )
+                                    )
+                                }
                             }
+                        } else {
+                            val firstProgress = StudyProgress(
+                                id = 1,
+                                vocabularyName = plan.vocabularyName,
+                                start = 0,
+                                wordListSize = plan.wordListSize
+                            )
+                            studyProgressRepository.insertStudyProgress(
+                                firstProgress
+                            )
+
+                            homeUiState.value = HomeUiState.Success(
+                                studyState = StudyState.Learning(
+                                    firstProgress.progressState
+                                )
+                            )
                         }
-
-                    } else {
-                        homeUiState.value = HomeUiState.Success(
-                            studyState = StudyState.None
-                        )
                     }
-                }
 
-            } catch (exception: Exception) {
-                homeUiState.value = HomeUiState.Error(
-                    DataResult.Error.Code.UNKNOWN
-                )
+                } else {
+                    homeUiState.value = HomeUiState.Success(
+                        studyState = StudyState.None
+                    )
+                }
             }
         }
     }

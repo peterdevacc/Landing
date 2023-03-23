@@ -22,28 +22,18 @@ class IpaViewModel @Inject constructor(
 
     fun setIpaType(ipaType: Ipa.Type) {
         viewModelScope.launch {
-            try {
-                val ipaList = ipaRepository.getIpaList().filter { it.type == ipaType }
-                ipaUiState.value = IpaUiState
-                    .Success(ipaType, ipaList)
-            } catch (exception: Exception) {
-                ipaUiState.value = IpaUiState
-                    .Error(DataResult.Error.Code.UNKNOWN)
-            }
+            val ipaList = ipaRepository.getIpaList().filter { it.type == ipaType }
+            ipaUiState.value = IpaUiState
+                .Success(ipaType, ipaList)
         }
     }
 
     init {
         viewModelScope.launch {
-            try {
-                val ipaList = ipaRepository.getIpaList()
-                    .filter { it.type == Ipa.Type.CONSONANTS }
-                ipaUiState.value = IpaUiState
-                    .Success(Ipa.Type.CONSONANTS, ipaList)
-            } catch (exception: Exception) {
-                ipaUiState.value = IpaUiState
-                    .Error(DataResult.Error.Code.UNKNOWN)
-            }
+            val ipaList = ipaRepository.getIpaList()
+                .filter { it.type == Ipa.Type.CONSONANTS }
+            ipaUiState.value = IpaUiState
+                .Success(Ipa.Type.CONSONANTS, ipaList)
         }
     }
 

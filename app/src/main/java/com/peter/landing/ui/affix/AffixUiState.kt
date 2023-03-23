@@ -13,8 +13,4 @@ sealed interface AffixUiState {
         val affixMap: Map<AffixCatalog, List<Affix>>
     ) : AffixUiState
 
-    data class Error(
-        val code: DataResult.Error.Code
-    ) : AffixUiState
-
 }

@@ -25,42 +25,30 @@ class AffixViewModel @Inject constructor(
 
     fun setAffixCatalogType(affixCatalogType: AffixCatalog.Type) {
         viewModelScope.launch {
-            try {
-                val affixMap = mutableMapOf<AffixCatalog, List<Affix>>()
-                val catalogList = affixCatalogRepository.getAffixCatalogList()
-                    .filter { it.type == affixCatalogType }
-                catalogList.forEach { catalog ->
-                    val affixList = affixRepository.getAffixListByCatalog(catalog.id)
-                    affixMap[catalog] = affixList
-                }
-                affixUiState.value = AffixUiState
-                    .Success(affixCatalogType, affixMap)
-            } catch (exception: Exception) {
-                affixUiState.value = AffixUiState
-                    .Error(DataResult.Error.Code.UNKNOWN)
+            val affixMap = mutableMapOf<AffixCatalog, List<Affix>>()
+            val catalogList = affixCatalogRepository.getAffixCatalogList()
+                .filter { it.type == affixCatalogType }
+            catalogList.forEach { catalog ->
+                val affixList = affixRepository.getAffixListByCatalog(catalog.id)
+                affixMap[catalog] = affixList
             }
+            affixUiState.value = AffixUiState
+                .Success(affixCatalogType, affixMap)
         }
 
     }
 
     init {
         viewModelScope.launch {
-
-            try {
-                val affixMap = mutableMapOf<AffixCatalog, List<Affix>>()
-                val catalogList = affixCatalogRepository.getAffixCatalogList()
-                    .filter { it.type == AffixCatalog.Type.PREFIX }
-                catalogList.forEach { catalog ->
-                    val affixList = affixRepository.getAffixListByCatalog(catalog.id)
-                    affixMap[catalog] = affixList
-                }
-                affixUiState.value = AffixUiState
-                    .Success(AffixCatalog.Type.PREFIX, affixMap)
-            } catch (exception: Exception) {
-                affixUiState.value = AffixUiState
-                    .Error(DataResult.Error.Code.UNKNOWN)
+            val affixMap = mutableMapOf<AffixCatalog, List<Affix>>()
+            val catalogList = affixCatalogRepository.getAffixCatalogList()
+                .filter { it.type == AffixCatalog.Type.PREFIX }
+            catalogList.forEach { catalog ->
+                val affixList = affixRepository.getAffixListByCatalog(catalog.id)
+                affixMap[catalog] = affixList
             }
-
+            affixUiState.value = AffixUiState
+                .Success(AffixCatalog.Type.PREFIX, affixMap)
         }
     }
 

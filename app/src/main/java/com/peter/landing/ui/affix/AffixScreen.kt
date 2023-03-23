@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.dp
 import com.peter.landing.R
 import com.peter.landing.data.local.affix.AffixCatalog
 import com.peter.landing.ui.navigation.LandingDestination
-import com.peter.landing.ui.util.ErrorNotice
 import com.peter.landing.ui.util.LandingTopBar
 
 @Composable
@@ -96,9 +95,6 @@ private fun AffixContent(
                 .fillMaxWidth()
         ) {
             when (uiState) {
-                is AffixUiState.Error -> {
-                    ErrorNotice(uiState.code)
-                }
                 is AffixUiState.Loading -> {
                     CircularProgressIndicator(
                         modifier = Modifier.size(24.dp, 24.dp)

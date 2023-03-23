@@ -172,28 +172,22 @@ class SpellingViewModel @Inject constructor(
     init {
         viewModelScope.launch {
 
-            try {
-                val progress = studyProgressRepository.getStudyProgressLatest()
-                if (progress != null) {
-                    val wordList = vocabularyViewRepository.getWordList(
-                        start = progress.start,
-                        wordListSize = progress.wordListSize,
-                        vocabularyName = progress.vocabularyName
-                    )
-                    currentWordList = wordList
-                    val word = currentWordList[progress.spelled]
+            val progress = studyProgressRepository.getStudyProgressLatest()
+            if (progress != null) {
+                val wordList = vocabularyViewRepository.getWordList(
+                    start = progress.start,
+                    wordListSize = progress.wordListSize,
+                    vocabularyName = progress.vocabularyName
+                )
+                currentWordList = wordList
+                val word = currentWordList[progress.spelled]
 
-                    spellingUiState.value = SpellingUiState.Success(
-                        current = progress.spelled,
-                        totalNum = progress.wordListSize,
-                        word = word
-                    )
-                } else {
-                    spellingUiState.value = SpellingUiState
-                        .Error(DataResult.Error.Code.UNKNOWN)
-                }
-
-            } catch (exception: Exception) {
+                spellingUiState.value = SpellingUiState.Success(
+                    current = progress.spelled,
+                    totalNum = progress.wordListSize,
+                    word = word
+                )
+            } else {
                 spellingUiState.value = SpellingUiState
                     .Error(DataResult.Error.Code.UNKNOWN)
             }

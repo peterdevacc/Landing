@@ -160,38 +160,32 @@ class ChoiceViewModel @Inject constructor(
     init {
         viewModelScope.launch {
 
-            try {
-                val progress = studyProgressRepository.getStudyProgressLatest()
-                if (progress != null) {
-                    val wordList = vocabularyViewRepository.getWordList(
-                        start = progress.start,
-                        wordListSize = progress.wordListSize,
-                        vocabularyName = progress.vocabularyName
-                    )
-                    currentWordList = wordList
-                    val word = currentWordList[progress.chosen]
-                    val optionWordList = getShuffleListWithoutWord(word)
-                    val correctIndex = optionWordList.indexOf(word)
-                    val optionList = optionWordList.map {
-                        it.cn to it.en
-                    }
-
-                    choiceUiState.value = ChoiceUiState.Success(
-                        current = progress.chosen,
-                        wordId = word.id,
-                        spelling = word.spelling,
-                        ipa = word.ipa,
-                        pronName = word.pronName,
-                        optionList = optionList,
-                        correctIndex = correctIndex,
-                        totalNum = progress.wordListSize
-                    )
-                } else {
-                    choiceUiState.value = ChoiceUiState
-                        .Error(DataResult.Error.Code.UNKNOWN)
+            val progress = studyProgressRepository.getStudyProgressLatest()
+            if (progress != null) {
+                val wordList = vocabularyViewRepository.getWordList(
+                    start = progress.start,
+                    wordListSize = progress.wordListSize,
+                    vocabularyName = progress.vocabularyName
+                )
+                currentWordList = wordList
+                val word = currentWordList[progress.chosen]
+                val optionWordList = getShuffleListWithoutWord(word)
+                val correctIndex = optionWordList.indexOf(word)
+                val optionList = optionWordList.map {
+                    it.cn to it.en
                 }
 
-            } catch (exception: Exception) {
+                choiceUiState.value = ChoiceUiState.Success(
+                    current = progress.chosen,
+                    wordId = word.id,
+                    spelling = word.spelling,
+                    ipa = word.ipa,
+                    pronName = word.pronName,
+                    optionList = optionList,
+                    correctIndex = correctIndex,
+                    totalNum = progress.wordListSize
+                )
+            } else {
                 choiceUiState.value = ChoiceUiState
                     .Error(DataResult.Error.Code.UNKNOWN)
             }

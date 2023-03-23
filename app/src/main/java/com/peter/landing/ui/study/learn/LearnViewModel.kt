@@ -173,29 +173,23 @@ class LearnViewModel @Inject constructor(
     init {
         viewModelScope.launch {
 
-            try {
-                val progress = studyProgressRepository.getStudyProgressLatest()
-                if (progress != null) {
-                    val wordList = vocabularyViewRepository.getWordList(
-                        start = progress.start,
-                        wordListSize = progress.wordListSize,
-                        vocabularyName = progress.vocabularyName
-                    )
-                    currentWordList = wordList
-                    val word = currentWordList[progress.learned]
+            val progress = studyProgressRepository.getStudyProgressLatest()
+            if (progress != null) {
+                val wordList = vocabularyViewRepository.getWordList(
+                    start = progress.start,
+                    wordListSize = progress.wordListSize,
+                    vocabularyName = progress.vocabularyName
+                )
+                currentWordList = wordList
+                val word = currentWordList[progress.learned]
 
-                    learnUiState.value = LearnUiState.Success(
-                        current = progress.learned,
-                        word = word,
-                        quiz = getQuiz(word.spelling),
-                        totalNum = progress.wordListSize
-                    )
-                } else {
-                    learnUiState.value = LearnUiState
-                        .Error(DataResult.Error.Code.UNKNOWN)
-                }
-
-            } catch (exception: Exception) {
+                learnUiState.value = LearnUiState.Success(
+                    current = progress.learned,
+                    word = word,
+                    quiz = getQuiz(word.spelling),
+                    totalNum = progress.wordListSize
+                )
+            } else {
                 learnUiState.value = LearnUiState
                     .Error(DataResult.Error.Code.UNKNOWN)
             }

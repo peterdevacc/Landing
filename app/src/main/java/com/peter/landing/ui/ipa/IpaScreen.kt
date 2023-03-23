@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import com.peter.landing.R
 import com.peter.landing.data.local.ipa.Ipa
 import com.peter.landing.ui.navigation.LandingDestination
-import com.peter.landing.ui.util.ErrorNotice
 import com.peter.landing.ui.util.LandingTopBar
 
 @Composable
@@ -92,9 +91,6 @@ private fun IpaContent(
                 .fillMaxWidth()
         ) {
             when (uiState) {
-                is IpaUiState.Error -> {
-                    ErrorNotice(uiState.code)
-                }
                 is IpaUiState.Loading -> {
                     CircularProgressIndicator(
                         modifier = Modifier.size(24.dp, 24.dp)
