@@ -36,11 +36,8 @@ class HomeViewModel @Inject constructor(
             }
             delay(1_000)
         }
-    }.stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(2_000),
-        initialValue = today,
-    )
+    }.distinctUntilChanged()
+
     private val errorFlow = MutableStateFlow<DataResult.Error?>(null)
 
     val homeUiState = planFlow
