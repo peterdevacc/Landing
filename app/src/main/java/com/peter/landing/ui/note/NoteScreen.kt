@@ -1,5 +1,6 @@
 package com.peter.landing.ui.note
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -9,9 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.rememberPagerState
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import com.peter.landing.R
 import com.peter.landing.data.local.word.Word
 import com.peter.landing.ui.navigation.LandingDestination
@@ -42,7 +42,7 @@ fun NoteScreen(
     )
 }
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun NoteContent(
     isDarkMode: Boolean,
@@ -153,9 +153,9 @@ private fun NoteContent(
                             }
                         }
                         HorizontalPager(
-                            count = titleList.size,
+                            pageCount = titleList.size,
                             state = pagerState,
-                            itemSpacing = 16.dp,
+                            pageSpacing = 16.dp,
                             modifier = Modifier.fillMaxSize()
                         ) {
                             when (it) {

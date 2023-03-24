@@ -1,5 +1,6 @@
 package com.peter.landing.ui.study.learn
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -8,7 +9,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.pager.*
+import androidx.compose.foundation.pager.*
+import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.peter.landing.R
 import com.peter.landing.ui.navigation.LandingDestination
 import com.peter.landing.ui.study.Counter
@@ -37,7 +40,7 @@ fun LearnScreen(
     )
 }
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalPagerApi::class)
 @Composable
 private fun LearnContent(
     uiState: LearnUiState,
@@ -110,9 +113,9 @@ private fun LearnContent(
                             modifier = Modifier.fillMaxWidth()
                         )
                         HorizontalPager(
-                            count = 2,
+                            pageCount = 2,
                             state = pagerState,
-                            itemSpacing = 16.dp,
+                            pageSpacing = 16.dp,
                             modifier = Modifier
                                 .weight(1f)
                                 .fillMaxWidth()
@@ -140,6 +143,7 @@ private fun LearnContent(
                         Spacer(modifier = Modifier.padding(vertical = 8.dp))
                         HorizontalPagerIndicator(
                             pagerState = pagerState,
+                            pageCount = 2,
                             indicatorShape = MaterialTheme.shapes.medium,
                             indicatorWidth = 32.dp,
                             indicatorHeight = 4.dp,
