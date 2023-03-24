@@ -1,8 +1,5 @@
 package com.peter.landing.ui.home
 
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.peter.landing.data.local.plan.StudyPlan
@@ -14,61 +11,62 @@ import com.peter.landing.data.util.DataResult
 import com.peter.landing.data.util.ThemeMode
 import com.peter.landing.util.getTodayDateTime
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val studyPlanRepository: StudyPlanRepository,
+    studyPlanRepository: StudyPlanRepository,
     private val studyProgressRepository: StudyProgressRepository,
     private val preferencesRepository: PreferencesRepository
 ) : ViewModel() {
-
-    private val homeUiState: MutableState<HomeUiState> = mutableStateOf(HomeUiState.Loading)
-    val uiState: State<HomeUiState> = homeUiState
-
-    fun setThemeMode(themeMode: ThemeMode) {
-        val state = homeUiState.value
-        if (state is HomeUiState.Success) {
-            viewModelScope.launch {
-                val result = preferencesRepository.setTheme(themeMode)
-                if (result is DataResult.Error) {
-                    homeUiState.value = HomeUiState.Error(
-                        code = result.code
-                    )
-                }
+    private val today = getTodayDateTime()
+    private val planFlow = studyPlanRepository.getStudyPlanFlow()
+    private val progressFlow = studyProgressRepository.getStudyProgressLatestFlow()
+    private val dateFlow = flow {
+        delay(1_000)
+        while (true) {
+            val date = getTodayDateTime()
+            if (today != date) {
+                emit(date)
+            } else {
+                emit(today)
             }
+            delay(1_000)
         }
-    }
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(2_000),
+        initialValue = today,
+    )
+    private val errorFlow = MutableStateFlow<DataResult.Error?>(null)
 
-    init {
-        viewModelScope.launch {
-            val planFlow = studyPlanRepository.getStudyPlanFlow()
-            val progressFlow = studyProgressRepository.getStudyProgressLatestFlow()
-            planFlow.combine(progressFlow) { plan: StudyPlan?, progress: StudyProgress? ->
-                plan to progress
-            }.collectLatest { (plan, latestProgress) ->
+    val homeUiState = planFlow
+        .combine(progressFlow) { plan: StudyPlan?, progress: StudyProgress? ->
+            plan to progress
+        }.combine(dateFlow) { studyData, date ->
+            studyData to date
+        }.combine(errorFlow) { data, hasError ->
+            data to hasError
+        }.map { (data, hasError) ->
+            if (hasError == null) {
+                val plan = data.first.first
+                val latestProgress = data.first.second
                 if (plan != null) {
                     if (plan.finished) {
-                        homeUiState.value = HomeUiState.Success(
-                            studyState = StudyState.PlanFinished
-                        )
+                        HomeUiState.Success(StudyState.PlanFinished)
                     } else {
                         if (latestProgress != null) {
                             if (latestProgress.finishedDate == null) {
-                                homeUiState.value = HomeUiState.Success(
-                                    studyState = StudyState.Learning(
-                                        latestProgress.progressState
-                                    )
+                                HomeUiState.Success(
+                                    StudyState.Learning(latestProgress.progressState)
                                 )
                             } else {
-                                if (latestProgress.finishedDate == getTodayDateTime()) {
-                                    homeUiState.value = HomeUiState.Success(
-                                        studyState = StudyState.Learning(
-                                            latestProgress.progressState
-                                        )
+                                if (latestProgress.finishedDate == data.second) {
+                                    HomeUiState.Success(
+                                        StudyState.Learning(latestProgress.progressState)
                                     )
                                 } else {
                                     val currentProgress = StudyProgress(
@@ -77,14 +75,10 @@ class HomeViewModel @Inject constructor(
                                         start = latestProgress.start + plan.wordListSize,
                                         wordListSize = plan.wordListSize
                                     )
-                                    studyProgressRepository.insertStudyProgress(
-                                        currentProgress
-                                    )
+                                    studyProgressRepository.insertStudyProgress(currentProgress)
 
-                                    homeUiState.value = HomeUiState.Success(
-                                        studyState = StudyState.Learning(
-                                            currentProgress.progressState
-                                        )
+                                    HomeUiState.Success(
+                                        StudyState.Learning(currentProgress.progressState)
                                     )
                                 }
                             }
@@ -95,22 +89,34 @@ class HomeViewModel @Inject constructor(
                                 start = 0,
                                 wordListSize = plan.wordListSize
                             )
-                            studyProgressRepository.insertStudyProgress(
-                                firstProgress
-                            )
+                            studyProgressRepository.insertStudyProgress(firstProgress)
 
-                            homeUiState.value = HomeUiState.Success(
-                                studyState = StudyState.Learning(
-                                    firstProgress.progressState
-                                )
-                            )
+                            HomeUiState.Success(StudyState.Learning(firstProgress.progressState))
                         }
                     }
 
                 } else {
-                    homeUiState.value = HomeUiState.Success(
-                        studyState = StudyState.None
-                    )
+                    HomeUiState.Success(StudyState.None)
+                }
+            } else {
+                HomeUiState.Error(
+                    code = hasError.code
+                )
+            }
+        }.stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(2_000),
+            initialValue = HomeUiState.Loading,
+        )
+
+    fun setThemeMode(themeMode: ThemeMode) {
+        val state = homeUiState.value
+        if (state is HomeUiState.Success) {
+
+            viewModelScope.launch {
+                val result = preferencesRepository.setTheme(themeMode)
+                if (result is DataResult.Error) {
+                    errorFlow.value = result
                 }
             }
         }
