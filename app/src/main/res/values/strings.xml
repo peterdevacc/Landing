@@ -1,8 +1,8 @@
 <resources>
     <string name="app_en_name">Landing</string>
     <string name="app_cn_name" translatable="false">上岸单词</string>
-    <string name="app_version" translatable="false">2.0.0</string>
-    <string name="app_last_update" translatable="false">2023年 3月 19号</string>
+    <string name="app_version" translatable="false">2.0.1</string>
+    <string name="app_last_update" translatable="false">2023年 3月 24号</string>
 
     <string name="screen_home" translatable="false">首页</string>
     <string name="screen_plan" translatable="false">学习计划</string>
