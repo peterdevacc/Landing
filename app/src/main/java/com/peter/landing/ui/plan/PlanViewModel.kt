@@ -14,7 +14,9 @@ import com.peter.landing.data.repository.vocabulary.VocabularyViewRepository
 import com.peter.landing.data.repository.wrong.WrongRepository
 import com.peter.landing.util.calculateEndDate
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.util.*
 import javax.inject.Inject
@@ -28,15 +30,35 @@ class PlanViewModel @Inject constructor(
     private val progressRepository: StudyProgressRepository
 ): ViewModel() {
 
-    private val planUiState: MutableState<PlanUiState> = mutableStateOf(PlanUiState.Loading)
-    val uiState: State<PlanUiState> = planUiState
+    private val planFlow = planRepository.getStudyPlanFlow()
+    private val planDialogUiState: MutableState<PlanDialogUiState> =
+        mutableStateOf(PlanDialogUiState.None)
+    val dialogUiState: State<PlanDialogUiState> = planDialogUiState
 
-    fun updateNewPlanVocabulary(
-        vocabulary: Vocabulary
-    ) {
-        val state = planUiState.value
-        if (state is PlanUiState.Empty) {
-            planUiState.value = state.copy(
+    val planUiState = planFlow.map { plan ->
+        if (plan == null) {
+            PlanUiState.Empty
+        } else {
+            PlanUiState.Existed(
+                studyPlan = plan,
+                progressReport = progressRepository.getLatestLessonReport(
+                    wordListSize = plan.wordListSize
+                ),
+                totalReport = progressRepository.getTotalReport(
+                    vocabularySize = plan.vocabularySize
+                )
+            )
+        }
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(2_000),
+        initialValue = PlanUiState.Loading
+    )
+
+    fun updateNewPlanVocabulary(vocabulary: Vocabulary) {
+        val state = planDialogUiState.value
+        if (state is PlanDialogUiState.NewPlan) {
+            planDialogUiState.value = state.copy(
                 vocabulary = vocabulary,
                 endDate = getEndDate(
                     state.startDate, vocabulary.size, state.wordListSize
@@ -45,12 +67,10 @@ class PlanViewModel @Inject constructor(
         }
     }
 
-    fun updateNewPlanWordListSize(
-        wordListSize: Int,
-    ) {
-        val state = planUiState.value
-        if (state is PlanUiState.Empty) {
-            planUiState.value = state.copy(
+    fun updateNewPlanWordListSize(wordListSize: Int) {
+        val state = planDialogUiState.value
+        if (state is PlanDialogUiState.NewPlan) {
+            planDialogUiState.value = state.copy(
                 wordListSize = wordListSize,
                 endDate = getEndDate(
                     state.startDate, state.vocabulary.size, wordListSize
@@ -59,12 +79,10 @@ class PlanViewModel @Inject constructor(
         }
     }
 
-    fun updateNewPlanStartDate(
-        startDate: Calendar? = null
-    ) {
-        val state = planUiState.value
-        if (state is PlanUiState.Empty) {
-            planUiState.value = state.copy(
+    fun updateNewPlanStartDate(startDate: Calendar? = null) {
+        val state = planDialogUiState.value
+        if (state is PlanDialogUiState.NewPlan) {
+            planDialogUiState.value = state.copy(
                 startDate = startDate,
                 endDate = getEndDate(
                     startDate, state.vocabulary.size, state.wordListSize
@@ -74,9 +92,9 @@ class PlanViewModel @Inject constructor(
     }
 
     fun completeNewPlan() {
-        val state = planUiState.value
-        if (state is PlanUiState.Empty) {
-            planUiState.value = PlanUiState.Loading
+        val state = planDialogUiState.value
+        if (state is PlanDialogUiState.NewPlan) {
+            planDialogUiState.value = PlanDialogUiState.Processing
             viewModelScope.launch {
                 val studyPlan = StudyPlan(
                     vocabularyName = state.vocabulary.name,
@@ -85,15 +103,7 @@ class PlanViewModel @Inject constructor(
                     startDate = state.startDate
                 )
                 planRepository.upsertStudyPlan(studyPlan)
-                planUiState.value = PlanUiState.Existed(
-                    studyPlan = studyPlan,
-                    progressReport = progressRepository.getLatestLessonReport(
-                        wordListSize = studyPlan.wordListSize
-                    ),
-                    totalReport = progressRepository.getTotalReport(
-                        vocabularySize = studyPlan.vocabularySize
-                    )
-                )
+                planDialogUiState.value = PlanDialogUiState.None
             }
 
         }
@@ -102,13 +112,13 @@ class PlanViewModel @Inject constructor(
     fun deletePlan() {
         val state = planUiState.value
         if (state is PlanUiState.Existed) {
-            planUiState.value = PlanUiState.Loading
+            planDialogUiState.value = PlanDialogUiState.Processing
             viewModelScope.launch {
                 vocabularyViewRepository.emptyWordListCache()
                 planRepository.removeStudyPlan()
                 progressRepository.removeStudyProgress()
                 wrongRepository.removeWrong()
-                planUiState.value = PlanUiState.Empty()
+                planDialogUiState.value = PlanDialogUiState.None
             }
         }
     }
@@ -118,42 +128,31 @@ class PlanViewModel @Inject constructor(
         if (state is PlanUiState.Empty) {
             viewModelScope.launch {
                 val vocabularyList = vocabularyRepository.getVocabularyList()
-                planUiState.value = state.copy(
-                    vocabularyList = vocabularyList,
-                    dialog = PlanUiState.Empty.Dialog.NewPlan
+                planDialogUiState.value = PlanDialogUiState.NewPlan(
+                    vocabularyList = vocabularyList
                 )
             }
         }
     }
 
     fun closeNewPlanDialog() {
-        val state = planUiState.value
-        if (state is PlanUiState.Empty) {
-            planUiState.value = state.copy(
-                dialog = PlanUiState.Empty.Dialog.None,
-                vocabulary = Vocabulary(),
-                wordListSize = 0,
-                startDate = null,
-                endDate = "",
-            )
+        val state = planDialogUiState.value
+        if (state is PlanDialogUiState.NewPlan) {
+            planDialogUiState.value = PlanDialogUiState.None
         }
     }
 
     fun openDeleteDialog() {
         val state = planUiState.value
         if (state is PlanUiState.Existed) {
-            planUiState.value = state.copy(
-                dialog = PlanUiState.Existed.Dialog.DeletePlan,
-            )
+            planDialogUiState.value = PlanDialogUiState.DeletePlan
         }
     }
 
     fun closeDeleteDialog() {
-        val state = planUiState.value
-        if (state is PlanUiState.Existed) {
-            planUiState.value = state.copy(
-                dialog = PlanUiState.Existed.Dialog.None,
-            )
+        val state = planDialogUiState.value
+        if (state is PlanDialogUiState.DeletePlan) {
+            planDialogUiState.value = PlanDialogUiState.None
         }
     }
 
@@ -165,29 +164,6 @@ class PlanViewModel @Inject constructor(
         }
 
         return ""
-    }
-
-    init {
-
-        val planFlow = planRepository.getStudyPlanFlow()
-        viewModelScope.launch {
-            planFlow.collectLatest { plan ->
-                if (plan == null) {
-                    planUiState.value = PlanUiState.Empty()
-                } else {
-                    planUiState.value = PlanUiState.Existed(
-                        studyPlan = plan,
-                        progressReport = progressRepository.getLatestLessonReport(
-                            wordListSize = plan.wordListSize
-                        ),
-                        totalReport = progressRepository.getTotalReport(
-                            vocabularySize = plan.vocabularySize
-                        )
-                    )
-                }
-            }
-        }
-
     }
 
 }

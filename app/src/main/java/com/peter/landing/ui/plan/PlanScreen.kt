@@ -6,18 +6,19 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.integerArrayResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.peter.landing.R
 import com.peter.landing.data.local.vocabulary.Vocabulary
 import com.peter.landing.ui.navigation.LandingDestination
 import com.peter.landing.ui.plan.chart.ProgressReportChart
 import com.peter.landing.ui.plan.chart.TotalReportChart
-import com.peter.landing.ui.util.ErrorNotice
 import com.peter.landing.ui.util.ImageNotice
 import com.peter.landing.ui.util.LandingTopBar
 import java.util.*
@@ -28,9 +29,12 @@ fun PlanScreen(
     viewModel: PlanViewModel,
     navigateTo: (String) -> Unit,
 ) {
+    val planUiState by viewModel.planUiState.collectAsStateWithLifecycle()
+
     PlanContent(
         isDarkMode = isDarkMode,
-        uiState = viewModel.uiState.value,
+        planUiState = planUiState,
+        dialogUiState = viewModel.dialogUiState.value,
         openNewPlanDialog = viewModel::openNewPlanDialog,
         updateNewPlanVocabulary = viewModel::updateNewPlanVocabulary,
         updateNewPlanStartDate = viewModel::updateNewPlanStartDate,
@@ -47,7 +51,8 @@ fun PlanScreen(
 @Composable
 private fun PlanContent(
     isDarkMode: Boolean,
-    uiState: PlanUiState,
+    planUiState: PlanUiState,
+    dialogUiState: PlanDialogUiState,
     openNewPlanDialog: () -> Unit,
     updateNewPlanVocabulary: (Vocabulary) -> Unit,
     updateNewPlanStartDate: (Calendar?) -> Unit,
@@ -70,7 +75,7 @@ private fun PlanContent(
             currentDestination = LandingDestination.Main.Plan,
             navigateTo = navigateTo,
             actions = {
-                if (uiState is PlanUiState.Existed) {
+                if (planUiState is PlanUiState.Existed) {
                     IconButton(
                         onClick = openDeleteDialog
                     ) {
@@ -89,28 +94,28 @@ private fun PlanContent(
                 .weight(1f)
                 .fillMaxWidth()
         ) {
-            when (uiState) {
+            when (planUiState) {
                 is PlanUiState.Empty -> {
 
-                    when (uiState.dialog) {
-                        PlanUiState.Empty.Dialog.NewPlan -> {
+                    when (dialogUiState) {
+                        is PlanDialogUiState.NewPlan -> {
                             NewPlanDialog(
-                                vocabularyList = uiState.vocabularyList,
+                                vocabularyList = dialogUiState.vocabularyList,
                                 studyAmountList = integerArrayResource(
                                     R.array.word_list_num_entry_values
                                 ).toList(),
                                 updateNewPlanVocabulary = updateNewPlanVocabulary,
                                 updateNewPlanStartDate = updateNewPlanStartDate,
                                 updateNewPlanWordListSize = updateNewPlanWordListSize,
-                                selectedVocabulary = uiState.vocabulary,
-                                selectedWordListSize = uiState.wordListSize,
-                                selectedStartDate = uiState.startDate,
-                                endDate = uiState.endDate,
+                                selectedVocabulary = dialogUiState.vocabulary,
+                                selectedWordListSize = dialogUiState.wordListSize,
+                                selectedStartDate = dialogUiState.startDate,
+                                endDate = dialogUiState.endDate,
                                 complete = completeNewPlan,
                                 onDismiss = closeNewPlanDialog
                             )
                         }
-                        PlanUiState.Empty.Dialog.None -> Unit
+                        else -> Unit
                     }
 
                     Column(
@@ -150,9 +155,7 @@ private fun PlanContent(
                             }
                         }
                     }
-                }
-                is PlanUiState.Error -> {
-                    ErrorNotice(uiState.code)
+
                 }
                 is PlanUiState.Loading -> {
                     CircularProgressIndicator(
@@ -161,35 +164,35 @@ private fun PlanContent(
                 }
                 is PlanUiState.Existed -> {
 
-                    when (uiState.dialog) {
-                        PlanUiState.Existed.Dialog.DeletePlan -> {
+                    when (dialogUiState) {
+                        is PlanDialogUiState.DeletePlan -> {
                             DeletePlanDialog(
                                 deletePlan = deletePlan,
                                 onDismiss = closeDeleteDialog
                             )
                         }
-                        PlanUiState.Existed.Dialog.None -> Unit
+                        else -> Unit
                     }
 
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
                     ) {
-                        if (uiState.progressReport.isNotEmpty()) {
+                        if (planUiState.progressReport.isNotEmpty()) {
                             Box(
                                 modifier = Modifier.padding(16.dp)
                             ) {
-                                ProgressReportChart(uiState.progressReport)
+                                ProgressReportChart(planUiState.progressReport)
                             }
                         }
 
-                        if (uiState.totalReport.isNotEmpty()) {
+                        if (planUiState.totalReport.isNotEmpty()) {
                             Box(
                                 modifier = Modifier.padding(16.dp)
                             ) {
                                 TotalReportChart(
-                                    uiState.studyPlan.vocabularyName,
-                                    uiState.totalReport
+                                    planUiState.studyPlan.vocabularyName,
+                                    planUiState.totalReport
                                 )
                             }
                         }
