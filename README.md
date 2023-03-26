@@ -32,3 +32,8 @@
 
 - 最低安卓系统版本要求：9.0
 - 准备在F-DRIOID发布
+
+## 证书
+
+**上岸单词** 是以遵循 Apache License (Version 2.0) 条款下提供的. 查看
+[license](LICENSE) 更多信息.
