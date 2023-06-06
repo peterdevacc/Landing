@@ -1,6 +1,6 @@
 # Landing 上岸单词
 
-![Logo](landing_logo.png)
+![Logo](LandingLogo.png)
 
 *一款安卓平台的英语单词学习软件*
 
