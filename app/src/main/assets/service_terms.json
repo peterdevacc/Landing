@@ -27,39 +27,35 @@
     },
     {
       "type": "TEXT",
-      "text": "4、用户不得对本软件产品进行任何反向工程、反向编译、反汇编等侵权行为。不得修改本软件产品的任何部分。也不得将被修改过的软件收录进光盘、磁盘、网络等媒介中或安装在手机中。更不得进行非法解密或注册等活动。否则本软件作者将保留依法追纠的权利，侵权者将承担由此产生的法律责任。\n4. The user shall not conduct any reverse engineering, reverse compilation, disassembly and other infringements of this software product. No part of this software product may be modified. It is also not allowed to record the modified software into CD, disk, network or other media or install it in the mobile phone. Not to engage in illegal decryption or registration activities. Otherwise, the author of this software will reserve the right to pursue rectification according to law, and the infringer will bear the legal responsibility arising therefrom."
+      "text": "4、鉴于用户手机软、硬件环境的差异性和复杂性，本软件所提供的各项功能并不能保证在任何情况下都能正常执行或达到用户所期望的结果。用户使用本软件所产生的一切后果，软件作者不承担任何责任。\n5. In view of the differences and complexity of the user's mobile phone software and hardware environment, the functions provided by this software cannot guarantee that they can be executed normally or achieve the results expected by the user under any circumstances. The author of the software does not bear any responsibility for all consequences arising from the use of this software by the user."
     },
     {
       "type": "TEXT",
-      "text": "5、鉴于用户手机软、硬件环境的差异性和复杂性，本软件所提供的各项功能并不能保证在任何情况下都能正常执行或达到用户所期望的结果。用户使用本软件所产生的一切后果，软件作者不承担任何责任。\n5. In view of the differences and complexity of the user's mobile phone software and hardware environment, the functions provided by this software cannot guarantee that they can be executed normally or achieve the results expected by the user under any circumstances. The author of the software does not bear any responsibility for all consequences arising from the use of this software by the user."
+      "text": "5、本软件作者对使用与安装本软件产品而给用户带来的损害不负责任。这些损害可能来自于与用户安装使用的其他软件的冲突，或由于不能使用本产品而造成的损害，包括（但不限于）直接或间接的个人损害、商业赢利的丧失、贸易中断、商业信息的丢失或任何其它金钱损失。由于使用本软件产品而给用户带来的任何直接或间接损失，软件作者不承担赔偿责任。\n6. The author of this software is not responsible for the damage caused to users by using and installing this software product. These damages may come from conflicts with other software installed and used by the user, or damages caused by the inability to use this product, including (but not limited to) direct or indirect personal damage, loss of commercial profits, trade interruption, and commercial information. Loss or any other monetary loss. The software author shall not be liable for compensation for any direct or indirect losses caused to the user due to the use of this software product."
     },
     {
       "type": "TEXT",
-      "text": "6、本软件作者对使用与安装本软件产品而给用户带来的损害不负责任。这些损害可能来自于与用户安装使用的其他软件的冲突，或由于不能使用本产品而造成的损害，包括（但不限于）直接或间接的个人损害、商业赢利的丧失、贸易中断、商业信息的丢失或任何其它金钱损失。由于使用本软件产品而给用户带来的任何直接或间接损失，软件作者不承担赔偿责任。\n6. The author of this software is not responsible for the damage caused to users by using and installing this software product. These damages may come from conflicts with other software installed and used by the user, or damages caused by the inability to use this product, including (but not limited to) direct or indirect personal damage, loss of commercial profits, trade interruption, and commercial information. Loss or any other monetary loss. The software author shall not be liable for compensation for any direct or indirect losses caused to the user due to the use of this software product."
+      "text": "6、为方便用户使用本软件产品，及获得技术支持，用户可能需要向软件作者或代理商请求注册(或激活)。注册(或激活)时可能需要提供与注册有关的用户个人信息、电脑硬件信息等数据。我们不会跟踪、监视用户手机，不会收集用户使用其它软件、文档等信息，不会泄漏用户隐私，不会将这些信息提供给任何第三方。同时，本软件不含有任何旨在破坏用户手机数据和获取用户隐私信息的恶意代码，不含有任何跟踪、监视用户手机的功能代码。\n7. In order to facilitate users to use this software product and obtain technical support, users may need to request registration (or activation) from the software author or agent. When registering (or activating), it may be necessary to provide user personal information, computer hardware information and other data related to the registration. We will not track or monitor users' mobile phones, will not collect users' use of other software, documents and other information, will not leak user privacy, and will not provide this information to any third party. At the same time, this software does not contain any malicious code designed to destroy user mobile phone data and obtain user privacy information, and does not contain any functional code for tracking and monitoring user mobile phones."
     },
     {
       "type": "TEXT",
-      "text": "7、为方便用户使用本软件产品，及获得技术支持，用户可能需要向软件作者或代理商请求注册(或激活)。注册(或激活)时可能需要提供与注册有关的用户个人信息、电脑硬件信息等数据。我们不会跟踪、监视用户手机，不会收集用户使用其它软件、文档等信息，不会泄漏用户隐私，不会将这些信息提供给任何第三方。同时，本软件不含有任何旨在破坏用户手机数据和获取用户隐私信息的恶意代码，不含有任何跟踪、监视用户手机的功能代码。\n7. In order to facilitate users to use this software product and obtain technical support, users may need to request registration (or activation) from the software author or agent. When registering (or activating), it may be necessary to provide user personal information, computer hardware information and other data related to the registration. We will not track or monitor users' mobile phones, will not collect users' use of other software, documents and other information, will not leak user privacy, and will not provide this information to any third party. At the same time, this software does not contain any malicious code designed to destroy user mobile phone data and obtain user privacy information, and does not contain any functional code for tracking and monitoring user mobile phones."
+      "text": "7、本软件经过详细的测试，但不能保证与所有的软硬件系统完全兼容。如果出现不兼容的情况，用户可将情况报告给软件作者。如果无法解决兼容性问题，用户可以删除本软件。\n8. This software has been tested in detail, but it cannot be guaranteed to be fully compatible with all software and hardware systems. If there is an incompatibility, the user can report the situation to the software author. If the compatibility problem cannot be solved, the user can delete the software."
     },
     {
       "type": "TEXT",
-      "text": "8、本软件经过详细的测试，但不能保证与所有的软硬件系统完全兼容。如果出现不兼容的情况，用户可将情况报告给软件作者。如果无法解决兼容性问题，用户可以删除本软件。\n8. This software has been tested in detail, but it cannot be guaranteed to be fully compatible with all software and hardware systems. If there is an incompatibility, the user can report the situation to the software author. If the compatibility problem cannot be solved, the user can delete the software."
+      "text": "8、由于本软件产品可以通过网络等途径下载、传播，对于从非本软件指定站点下载的本软件产品以及从其它介质上获得的本软件产品，软件作者无法保证该软件是否感染手机病毒、是否隐藏有伪装的木马程序或者黑客软件，不承担由此引起的直接和间接损害责任。\n9. Since this software product can be downloaded and disseminated through the Internet, etc., the software author cannot guarantee whether the software is infected with mobile phone viruses or whether the software product is downloaded from a site other than the software designated site and the software product obtained from other media. Hidden camouflaged Trojan horse programs or hacker software shall not be liable for the direct and indirect damages caused thereby."
     },
     {
       "type": "TEXT",
-      "text": "9、由于本软件产品可以通过网络等途径下载、传播，对于从非本软件指定站点下载的本软件产品以及从其它介质上获得的本软件产品，软件作者无法保证该软件是否感染手机病毒、是否隐藏有伪装的木马程序或者黑客软件，不承担由此引起的直接和间接损害责任。\n9. Since this software product can be downloaded and disseminated through the Internet, etc., the software author cannot guarantee whether the software is infected with mobile phone viruses or whether the software product is downloaded from a site other than the software designated site and the software product obtained from other media. Hidden camouflaged Trojan horse programs or hacker software shall not be liable for the direct and indirect damages caused thereby."
+      "text": "9、本软件会由于用户的需求而不断更新，本软件作者将提供包括用户手册，电子邮件等各种相关信息支持，但不确保支持内容和功能不发生变更。\n10. The software will be constantly updated due to the needs of users. The author of this software will provide various related information support including user manuals, emails, etc., but does not ensure that the supported content and functions will not change."
     },
     {
       "type": "TEXT",
-      "text": "10、本软件会由于用户的需求而不断更新，本软件作者将提供包括用户手册，电子邮件等各种相关信息支持，但不确保支持内容和功能不发生变更。\n10. The software will be constantly updated due to the needs of users. The author of this software will provide various related information support including user manuals, emails, etc., but does not ensure that the supported content and functions will not change."
+      "text": "10、当您不同意或者违背本协议的时候，协议将自动终止，您必须立即删除本软件产品。\n11. When you disagree or violate this agreement, the agreement will be automatically terminated, and you must delete this software product immediately."
     },
     {
       "type": "TEXT",
-      "text": "11、当您不同意或者违背本协议的时候，协议将自动终止，您必须立即删除本软件产品。\n11. When you disagree or violate this agreement, the agreement will be automatically terminated, and you must delete this software product immediately."
-    },
-    {
-      "type": "TEXT",
-      "text": "12、以上协议内容中英文如有歧义，一律以中文版本为准。\n12. In case of discrepancy between the English version and the Chinese version in respect of all or any part of the contents in the agreement, the Chinese version shall prevail."
+      "text": "11、以上协议内容中英文如有歧义，一律以中文版本为准。\n12. In case of discrepancy between the English version and the Chinese version in respect of all or any part of the contents in the agreement, the Chinese version shall prevail."
     },
     {
       "type": "SIGNATURE",
